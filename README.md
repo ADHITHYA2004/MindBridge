@@ -26,23 +26,4 @@ Table and Forms
 Table attributes
 Form types
 Task: Employee Task Tracker
-About
-No description, website, or topics provided.
-Resources
- Readme
- Activity
-Stars
- 1 star
-Watchers
- 1 watching
-Forks
- 0 forks
-Report repository
-Releases
-No releases published
-Packages
-No packages published
-Languages
-HTML
-100.0%
-Footer
+
