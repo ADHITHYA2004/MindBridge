@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .header{
+            text-align: center;
+            color: green;
+        }
+        .form1{
+            display: flex;
+            justify-content: center;
+        }
+        .form-card{
+            background-color: #fffcfc;
+            padding: 10px;
+            width: 300px;
+            box-shadow: 4px 4px 7px 7px rgba(0,0,0,0.1);
+            /* border: 2px black solid; */
+            border-radius: 5px;
+        }
+        .form-card label{
+            color: blue;
+            font-size: 17px;
+            font-weight: 900;
+            display: block;
+            padding: 10px 0;
+        }
+        .form-card input,textarea{
+            width: 300px;
+            padding: 5px 0;
+        }
+        .form-card button{
+            padding: 5px 5px;
+        }
+        .form-group{
+            margin-bottom: 10px
+        }
+        .form-card button{
+            border: 2px;
+            color: white;
+            margin: 0 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .form-card .sub{
+            background-color: green;
+        }
+        .form-card .reset{
+            background-color: red;
+        }
+
+        /*table style*/
+        table {
+            margin-top: 30px;
+            border-collapse: collapse;
+            width: 100%;
+            }
+        th, td {
+            max-width: 130px;
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="header">Employee Task Tracker</h1>
+    <section class="form1">
+        <div class="form-card">
+            <form action="" class="form" id="taskForm">
+                <div class="form-group">
+                    <label for="name">Employee Name</label>
+                    <input type="text" id="name" name="name" placeholder="Name" >
+                </div>
+                <div class="form-group">
+                    <label for="title">Task Title</label>
+                    <input type="text" id="title" name="title" placeholder="Task Title">
+                </div>
+                <div class="form-group">
+                    <label for="description">Task Description</label>
+                    <textarea name="description" id="description" placeholder="Description"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="date">Due Date</label>
+                    <input type="date" id="date" name="date" style="margin-bottom: 20px;">
+                </div>
+                <button type="submit" class="sub" onclick=click_submit(event)>Submit</button> 
+                <button type="reset" class="reset">Reset</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="table">
+        <table id="taskTable">
+            <thead>
+                <tr>
+                    <th rowspan="2">Name</th>
+                    <th colspan="2">Task Details</th>
+                    <th rowspan="2">Due Date</th>
+                </tr>
+                <tr>
+                    <th>Title</th>
+                    <th>Title Description</th>
+                </tr>
+            </thead>
+            <tbody id="tablebody">
+                
+                <!-- <tr>
+                    <td>Adhithya</td>
+                    <td>HTML</td>
+                    <td>Complete the task within the end date and need to push in the github</td>
+                    <td>26-12-2024</td>
+                </tr> -->
+            </tbody>
+        </table>
+    </section>
+
+
+
+    <script>
+        function click_submit(event) {
+            event.preventDefault(); 
+            
+            const name = document.getElementById("name").value;
+            const title = document.getElementById("title").value;
+            const description = document.getElementById("description").value;
+            const date = document.getElementById("date").value;
+
+            const tableBody = document.getElementById("tablebody");
+            const newRow = document.createElement("tr");
+
+            newRow.innerHTML = `
+            <td>${name}</td>
+            <td>${title}</td>
+            <td>${description}</td>
+            <td>${date}</td>`;
+            
+            tableBody.appendChild(newRow);
+        }
+    </script>
+</body>
+</html>
