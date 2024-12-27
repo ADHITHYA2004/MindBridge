@@ -28,7 +28,7 @@
 <h4>Task: Employee Task Tracker</h4>
 
 <h2>DAY 4:</h2>
-<h2>css basic</h2>
+<h2>CSS basic</h2>
 <li>Marque </li>
 <li>Font awesome</li>
 <h4>Task: </h4>
