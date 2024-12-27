@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.lavishly-yours-regular {
+    font-family: "Lavishly Yours", serif;
+    font-size: 23.5px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+.newspaper{
+    padding: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    border: black 2px solid;
+    background-color: white;
+}
+.head{
+    text-align: center;
+    border-bottom: 4px black double  ;
+    padding-bottom: 30px;
+    /* margin-bottom: 40px; */
+}
+.newspaper .title{
+    font-family: "Rubik Wet Paint", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 45px;
+    margin: 0;
+    font-weight: bold;
+    color: rgb(255, 89, 0);
+}
+.sub{
+    font-style: italic;
+    font-weight: 700;
+    font-size: 20px;
+    margin: 10px 0;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+nav a{
+    padding-top: 10px;
+    color: black;
+}
+.main-heading{
+    font-size: 40px;
+    padding: 20px 0;
+    text-align: center;
+    color: rgb(254, 1, 107);
+}
+.main .main-content{
+    margin: 20px 0 0 40px;
+    display: flex;
+    /* justify-content: space-around; */
+    /* border: black 2px solid; */
+}
+.main .img1 img{
+    border-radius: 20px;
+    height:300px;
+}
+.main .content{
+    margin-left: 50px;
+}
+.h3{
+    font-family: "EB Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: 20px;
+    font-style: italic;
+    color: rgb(81, 0, 255);
+}
+.p1{
+    line-height: 1.7;
+    text-indent: 50px;
+    text-align: justify;
+    font-size: 1.2em;
+}
+.i1{
+    line-height: 1.7;
+    font-style: italic;
+}
+.main h3{
+    }
+.main .quote{
+    margin-top: 10px;
+    padding: 10px;
+    border-radius:10px;
+    background-color: #fff9e6;
+}

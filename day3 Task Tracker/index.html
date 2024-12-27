@@ -90,7 +90,7 @@
                     <label for="date">Due Date</label>
                     <input type="date" id="date" name="date" style="margin-bottom: 20px;">
                 </div>
-                <button type="submit" class="sub" onclick=click_submit(event)>Submit</button> 
+                <button type="submit" class="sub" onclick=click_submit(event)>Assign Task</button> 
                 <button type="reset" class="reset">Reset</button>
             </form>
         </div>
@@ -124,6 +124,9 @@
 
 
     <script>
+        let set1=new Set();
+        // set1.add("ADHITHYA");
+        // console.log(set1);
         function click_submit(event) {
             event.preventDefault(); 
             
@@ -132,16 +135,32 @@
             const description = document.getElementById("description").value;
             const date = document.getElementById("date").value;
 
-            const tableBody = document.getElementById("tablebody");
             const newRow = document.createElement("tr");
-
-            newRow.innerHTML = `
-            <td>${name}</td>
-            <td>${title}</td>
-            <td>${description}</td>
-            <td>${date}</td>`;
             
-            tableBody.appendChild(newRow);
+            if(!set1.has(name)){
+                // console.log("no")
+                const tableBody = document.getElementById("tablebody");
+                newRow.id= "nameget";
+                newRow.innerHTML = `
+                <td>${name}</td>
+                <td>${title}</td>
+                <td>${description}</td>
+                <td>${date}</td>`;
+                tableBody.appendChild(newRow);
+                set1.add(name);
+                
+            }
+            else{
+                const row1 = document.getElementById(nameget);
+                newRow.innerHTML = `
+                <td rowspan="2"></td>
+                <td>${title}</td>
+                <td>${description}</td>
+                <td>${date}</td>`;
+                
+                row1.appendChild(newRow);
+            }
+
         }
     </script>
 </body>
