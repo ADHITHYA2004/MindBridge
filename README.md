@@ -31,5 +31,5 @@
 <h2>CSS basic</h2>
 <li>Marque </li>
 <li>Font awesome</li>
-<h4>Task: </h4>
+<h4>Task:Classic Birthday Newspaper </h4>
 
