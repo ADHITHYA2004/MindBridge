@@ -1,0 +1,126 @@
+
+body {
+    background-color: #828bb1;
+    margin: 0;
+    font-family: "Times New Roman", Times, serif;
+}
+a{
+    text-decoration: none;
+}
+.navbar{
+    margin: 0;
+    width: 100%;
+    height: 60px;
+    gap: 20px;
+    position: fixed;
+    top: 0;
+    background-color:rgb(255, 255, 255);
+    box-shadow: 0 2px 5px rgba(250, 249, 249, 0.566);
+}
+nav {
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+}
+nav a{
+    font-weight: bold;
+    font-size: 20px;
+}
+nav a:link {
+    color: rgb(152, 18, 240);
+}
+nav a:hover {
+    color: red;
+    font-size: 120%;
+    text-decoration: underline;
+}
+.main{
+    margin-top: 60px;
+}
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+}
+
+.header h1 {
+    color: #f4f1ea;
+    font-size: 3rem;
+    margin: 20px 0;
+    font-weight: normal;
+    letter-spacing: 2px;
+}
+.main-heading {
+    height: 3px;
+    border-top: #d8d2d2 6px dashed;
+    margin: 10px auto;
+    max-width: 800px;
+}
+.newspaper-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.newspaper {
+    background-color: #f4f1ea;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+.newspaper:hover {
+    transform: scale(1.02);
+}
+.newspaper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(244, 241, 234, 0.1);
+    pointer-events: none;
+}
+.newspaper-header {
+    border-bottom: 4px double #000;
+    padding: 15px;
+    text-align: center;
+}
+.newspaper-header h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+.date {
+    font-style: italic;
+    margin: 5px 0 0;
+    font-size: 13px;
+}
+.newspaper-content {
+    padding: 20px;
+}
+.newspaper-content h3 {
+    font-size:18px;
+    margin: 0 0 15px;
+    line-height: 1.3;
+}
+.image-container {
+    position: relative;
+    height: 200px;
+    margin: 15px 0;
+}
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.sub-content {
+    text-indent: 20px;
+    text-align: justify;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 15px 15px 0 15px;
+}

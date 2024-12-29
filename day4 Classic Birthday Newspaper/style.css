@@ -8,9 +8,15 @@
     font-weight: 400;
     font-style: normal;
 }
+marquee{
+    font-family: "Lavishly Yours", serif;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+    color: rgb(250, 250, 250);
+}
 .qq{
     display: flex;
-    /* justify-content: space-between; */
 }
 a{
     text-decoration: none;
@@ -24,7 +30,6 @@ a{
     font-size: 60px;
 }
 .next-button{
-    /* padding: 40px; */
     margin-top: 270px;
     margin-right: 70px;
 }
@@ -33,33 +38,40 @@ a{
     font-size: 60px;
 }
 body{
-    padding: 10px 10px;
-    background-color: #f4f4f4;
+    padding: 10px 0 0px 0;
+    background-color: #828bb1;
 }
 .menu nav{
-    margin:70px 0 0 50px;
-    padding: 20px 20px 0 20px;
-    background-color: #fff9e6;
+    margin:12px 0 0 0px;
+    height: 93%;
+    padding: 20px 25px 0 20px;
+    background-color: rgba(255, 255, 255, 0.856);
+    box-shadow:  3px 1px 4px rgba(202, 198, 198, 0.1);
 }
 .menu nav a{
     display: block;
-    padding:40px 0px;
-    color: black;
+    font-size: 17px;
+    font-weight:bold;
+    padding:60px 0px;
 }
-
-
+.menu nav a:link {
+    color: rgb(152, 18, 240);
+}
+.menu nav a:hover {
+    color: red;
+    font-size: 120%;
+    text-decoration: underline;
+}
 .newspaper{
     padding: 30px;
     max-width: 700px;
     margin: 10px auto;
-    /* border: black 2px solid; */
     background-color: white;
 }
 .head{
     text-align: center;
     border-bottom: 4px black double  ;
     padding-bottom: 30px;
-    /* margin-bottom: 40px; */
 }
 .newspaper .title{
     font-family: "Rubik Wet Paint", serif;
@@ -76,7 +88,6 @@ body{
     font-size: 20px;
     margin: 10px 0;
 }
-
 .main-heading{
     font-size: 40px;
     padding: 20px 0;
@@ -86,11 +97,9 @@ body{
 .main .main-content{
     margin: 20px 0 0 10px;
     display: flex;
-    /* justify-content: space-around; */
-    /* border: black 2px solid; */
 }
 .main .img1 img{
-    border-radius: 20px;
+    border-radius: 0px;
     height:270px;
 }
 .main .content{
@@ -114,8 +123,6 @@ body{
     line-height: 1.7;
     font-style: italic;
 }
-.main h3{
-    }
 .main .quote{
     margin-top: 10px;
     padding: 10px;
