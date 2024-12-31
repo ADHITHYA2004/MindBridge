@@ -430,14 +430,109 @@ header .list{
 .ticket-btn button:hover{
     background-color: #e07a5f;
 }
-
-
-
-
-
-
-
 #event-contant{
     background-color: white;
     border-radius: 20px;
+}
+
+
+/* conatct */
+.contact{
+    height: 90vh; ;
+}
+.contact h1{
+    font-size: 35px;
+    font-weight: bold;
+}
+.contact-container{
+    display: flex;
+    gap: 10px;
+}
+.form-data{
+    padding: 17px 20px;
+    border-radius: 30px;
+    margin: 0 10px 20px 0;
+    border: rgb(176, 168, 168) 2px solid;
+    font-size: 17px;
+}
+.form-data:hover{
+    border: black 2px solid;
+}
+.contact-textarea{
+    width: 97%;
+    height: 130px;
+    font-size: 17px;
+    border-radius: 20px;
+    border: rgb(176, 168, 168) 2px solid;
+    margin: 0 0 20px;
+}
+.contact-textarea:hover{
+    border: black 2px solid;
+}
+.contact-form-btn{
+    padding: 12px;
+    font-weight: 600;
+    color: white;
+    background-color: #f2cc8f;
+    border: none;
+    font-size: 17px;
+    border-radius: 30px;
+    width: 97%;
+}
+.contact-form-btn:hover{
+    background-color: #e07a5f;
+}
+.location{
+    margin: 0 0 0 200px;
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    width: 250px;
+    padding: 30px 10px;
+    background-image: url(./img/map.jpg);
+}
+.location-contant{
+    background-color:#3d405b;
+    color:white;
+    line-height: 15px;
+    margin-top: 0;
+    padding: 10px;
+    border-radius: 20px 20px 0px 0px;
+}
+.location-contant p{
+    padding: 0 15px;
+}
+.location-btn p{
+    margin: 0;
+    text-align: center;
+    width: 92%;
+    color: white;
+    height: 30px;
+    padding: 10px 10px;
+    border-radius: 0px 0px 20px 20px;
+    background-color:#e07a5f;
+}
+.location-btn p:hover{
+    background-color: #f2cc8f;
+}
+
+
+/* foot style */
+
+.foot-contant{
+    display: flex;
+}
+.logo{
+    display: flex;
+    gap: 10px;
+}
+.foot-name{
+    line-height: 1px;
+    margin: 0;
+}
+.foot-name h2{
+    font-size: 30px;
+}
+.foot-name p{
+    font-size: 10px;
 }
