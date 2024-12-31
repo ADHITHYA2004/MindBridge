@@ -11,6 +11,7 @@ a{
     text-decoration: none;
 }
 center h1{
+    font-size: 35px;
     font-weight: bold;
 }
 header{
@@ -90,7 +91,7 @@ header .list{
 }
 #container1{
     height: 66.4vh;
-    background-color: rgba(170, 203, 230, 0.457);
+    background-color: rgba(170, 203, 230, 0.331);
 }
 .container{
     display: flex;
@@ -290,13 +291,14 @@ header .list{
     text-align: center;
 }
 #wrong{
-    color: red;
+    color: #e07a5f
 }
 #crt{
-    color: green;
+    color: #81b29a;
 }
 .form-contant h2{
     margin-top: 0;
+    color: white;
 }
 .form-contant{
     background-color: #3d405b;
@@ -304,29 +306,138 @@ header .list{
     width: 390px;
     padding: 20px 40px;
 }
-/* .membership-form input{
-
-    font-size: 15px;
-} */
 #form1{
     font-size: 15px;
+    border: rgb(176, 168, 168) 2px solid;
     border-radius: 40px;
     width: 90%;
     margin: 10px 0;
     padding: 15px;
 }
 .form-textarea{
+    border: rgb(176, 168, 168) 2px solid;
     border-radius: 20px;
     min-height: 80px;
     margin-top: 10px;
     font-size: 15px;
     width: 97%;
 }
-.form-textarea input::placeholder{
-    /* align-items: center; */
-    text-align: center;
+#form1:hover{
+    border: black 2px solid;
+}
+.form-textarea:hover{
+    border: black 2px solid;
 }
 .form-btns{
     padding: 0;
     width: 100% !important;
+    font-weight: bold;
+    color: white;
+    border: none  !important;
+    background-color: #f2cc8f;
+}
+.form-btns:hover{
+    background-color: #e07a5f;
+}
+
+
+
+
+
+/* upcoming events style */
+.upcoming-events{
+    background-color: #f4f1de;
+}
+.upcoming-events h1{
+    font-size: 35px;
+    font-weight: bold;
+}
+.event-container{  
+    padding: 15px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.event-contant{
+    display: flex;
+    height: 250px;
+    /* border: #303243 2px solid; */
+    padding: 30px 20px;
+    gap: 40px;
+}
+.event-date{
+    /* border: #303243 2px solid; */
+    margin-left: 15px;
+    text-align: center;
+    padding: 20px 55px;
+    background-color: #81b29a;
+    height: 80px;
+    line-height: 10px;
+    border-radius: 20px;
+}
+.event-date h2{
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 40px;
+}
+.event-date h3{
+    font-weight: 600;
+    line-height: 5px;
+    font-size: 15px;
+    color: white;
+}
+.event-img img{
+    border-radius: 20px;
+    width: 330px;
+    height: 200px;
+    position: relative;
+}
+
+.event-img img:hover {
+    transform: scale(1.03);
+}
+.event-message h2{
+    color: #3d405b;
+    margin-top: 4px;
+    font-weight: 600;
+}
+.event-message h2:hover{
+    color: #f2cc8f;
+}
+.event-message p{
+    margin-top: 0px;
+    font-weight: 500;
+    color:#717275;
+}
+.event-message-box{
+    line-height: 2;
+    border-bottom: black 1px solid;
+}
+.ticket-box{
+    padding: 15px 0 0;
+    display: flex;
+    gap:10px;
+}
+.ticket-btn button{
+    margin: 20px 0 20px 90px;
+    background-color: #f2cc8f;
+    border-radius: 20px;
+    color: white;
+    font-weight: 600;
+    border: none;
+    padding: 10px 20px;
+}
+.ticket-btn button:hover{
+    background-color: #e07a5f;
+}
+
+
+
+
+
+
+
+#event-contant{
+    background-color: white;
+    border-radius: 20px;
 }
