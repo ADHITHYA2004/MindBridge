@@ -2,7 +2,6 @@
         font-family: "Poppins", serif;
         font-weight: 400;
         font-style: normal;
-
 }
 body{
     margin: 0;
@@ -131,7 +130,7 @@ header .list{
     border-radius: 20px;
 }
 .btn-story:hover{
-    background-color: rgb(212, 73, 73);
+    background-color: #e07a5f;
 }
 .main-button-row .member:hover{
     color: #f2cc8f ;
@@ -185,4 +184,149 @@ header .list{
 
 
 
-/* event styles */
+/* message style */
+.message{
+    height: 90vh;
+    background-image: url(./img/bat.jpg);
+}
+.message-container{
+    padding: 40px;
+    margin: 30px 0;
+}
+.message-box{
+    width: 470px;
+    height: 230px;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.721);
+    /* filter: blur(0.4px); */
+    /* border: #f1f1f5 2px solid; */
+    border-radius: 30px;
+    padding: 30px;
+}
+.message-box h2{
+    margin-top: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: black;
+}
+.message-box p{
+    line-height: 30px;
+    color:#717275;
+}
+.mail-box{
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px;
+    border-radius: 30px;
+    background-color: white;
+}
+.mail-icon a{
+    color: black;
+    align-items: center;
+    font-size: 30px;
+}
+.mail{
+    padding: 8px 0;
+    align-items: center;
+}
+.mail input{
+    width: 260px;
+    height: 30px;
+    border: white;
+    font-size: 20px;
+    outline: none;
+}
+.mail-btn{
+    align-items: center;
+    background-color: #f2cc8f;
+    padding: 10px 25px;
+    border-radius: 25px;
+}
+.mail-btn:hover{
+    background-color: #e07a5f;
+}
+
+/* membership */
+
+
+.membership-container{
+    display: flex;
+    gap: 100px;
+    /* justify-content: space-between; */
+}
+.membership-container h2{
+    font-weight: 500;
+}
+.table{
+    width: 570px;
+    border-collapse: collapse;
+}
+.table td,th{
+    padding: 17px;
+}
+.table th{
+    background-color: #3d405b;
+    color: white;
+    font-weight:bold;
+}
+.table th:last-child{
+    border-radius: 0 20px 0 0;
+}
+.table th:first-child{
+    border-radius: 20px 0px 0 0;
+}
+.table td{
+    font-weight: bold;
+    color: #3d405b;
+}
+.table tbody tr:nth-child(2n){
+    background-color: #f4f1de;
+}
+.table .table-text{
+    text-align: left;
+}
+.table td {
+    text-align: center;
+}
+#wrong{
+    color: red;
+}
+#crt{
+    color: green;
+}
+.form-contant h2{
+    margin-top: 0;
+}
+.form-contant{
+    background-color: #3d405b;
+    border-radius: 20px;
+    width: 390px;
+    padding: 20px 40px;
+}
+/* .membership-form input{
+
+    font-size: 15px;
+} */
+#form1{
+    font-size: 15px;
+    border-radius: 40px;
+    width: 90%;
+    margin: 10px 0;
+    padding: 15px;
+}
+.form-textarea{
+    border-radius: 20px;
+    min-height: 80px;
+    margin-top: 10px;
+    font-size: 15px;
+    width: 97%;
+}
+.form-textarea input::placeholder{
+    /* align-items: center; */
+    text-align: center;
+}
+.form-btns{
+    padding: 0;
+    width: 100% !important;
+}
