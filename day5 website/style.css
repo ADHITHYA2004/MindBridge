@@ -16,7 +16,7 @@ center h1{
 }
 header{
     display:flex;
-    /* justify-content: center; */
+    justify-content: center;
     align-items: center;
     background-color: #3d405b;
     width: 100%;
@@ -43,25 +43,44 @@ header{
     margin-left: 10px;
 }
 nav{
-    margin-left: 50px;
+    display: flex;
+    margin-left: 90px;
+    padding-left :40px;
+    gap: 40px;
+}
+.dropdown-content{
+    position: absolute;
+    display: none;
+    line-height: 2;
+    margin-left: 42%;
+    margin-top: 40px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px 15px;
+}
+.dropdown-content a{
+    display: block;
+    color: #717275;
+}
+#drop:hover + .dropdown-content{
+    display: block;
 }
 header .list{
     color: white;
     font-size: 16px;
-    font-weight: bold;
-    padding-left :50px;
+    font-weight: 600;
 }
 .list:hover{
     color: #f2cc8f ;
 }
 .Membership-button{
     margin-right: 40px;
-    margin-left: -10px;
+    margin-left: -50px;
 }
 .Membership-button .button{
-    padding: 10px 15px;
+    padding: 9px 17px;
     border: #f2cc8f 2px solid;
-    border-radius: 20px ;
+    border-radius: 30px ;
     font-weight: bold;
     color: #f2cc8f;
     background-color: #3d405b;
@@ -76,6 +95,8 @@ header .list{
 .main{
     margin-top: 95px;
 }
+
+
 
 
 
@@ -139,6 +160,8 @@ header .list{
 
 
 
+
+
 /* about style */
 .aboutus{
     padding-bottom: 40px;
@@ -182,6 +205,9 @@ header .list{
     margin-top: 0;
     color:#717275;
 }
+
+
+
 
 
 
@@ -248,8 +274,10 @@ header .list{
     background-color: #e07a5f;
 }
 
-/* membership */
 
+
+
+/* membership */
 
 .membership-container{
     display: flex;
@@ -361,12 +389,10 @@ header .list{
 .event-contant{
     display: flex;
     height: 250px;
-    /* border: #303243 2px solid; */
     padding: 30px 20px;
     gap: 40px;
 }
 .event-date{
-    /* border: #303243 2px solid; */
     margin-left: 15px;
     text-align: center;
     padding: 20px 55px;
@@ -436,9 +462,12 @@ header .list{
 }
 
 
+
+
+
 /* conatct */
 .contact{
-    height: 90vh; ;
+    height: 90vh; 
 }
 .contact h1{
     font-size: 35px;
@@ -517,22 +546,81 @@ header .list{
 }
 
 
-/* foot style */
 
+
+
+/* foot style */
+.foot{
+    height:70vh ;
+}
 .foot-contant{
     display: flex;
+    margin: 50px 0 0 30px;
+    gap: 40px;
 }
-.logo{
+.foot-logo{
+    margin-top: 0;
     display: flex;
     gap: 10px;
+    padding: 0 390px 0 0;
+}
+.foot-image img{
+    width: 48px;
+    height: 48px;
 }
 .foot-name{
     line-height: 1px;
     margin: 0;
 }
 .foot-name h2{
+    margin-top: 13px;
+    font-weight: 600;
+    color: #000000;
     font-size: 30px;
 }
 .foot-name p{
-    font-size: 10px;
+    margin-top: 0;
+    font-weight: 600;
+    font-size: 12px;
+}
+.join-us{
+    width: 285px;
+}
+.join-us h2{
+    color: #3d405b;
+    margin: 0;
+    font-size: 25px;
+}
+.forline{
+    border-bottom:#7172757f 1px solid;
+    width: 89%;
+}
+.join-us p{
+    font-size: 18px;
+    color: #717275;
+}
+.social-icons{
+    padding: 50px 30px 20px 30px;
+    display: flex;
+}
+.social-icons a{
+    background-color: #3d405b;
+    border-radius: 50%;
+    font-size: 18px;
+    margin: 0 8px;
+}
+.social-icons a i{
+    color: white;
+    padding: 10px;
+}
+.social-contant p{
+    font-size: 18px;
+    margin: 0 0 0 43px;
+}
+
+
+
+.last-footer{
+    height: 20vh;
+    background-color: #81b29a;
 }
