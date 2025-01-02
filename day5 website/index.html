@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AN Cricket Club</title>
+    <title>Tiya Golf Club</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +15,7 @@
     <header>
         <div class="logo">
             <a href="#home"><img src="./logo.png" alt=""></a>
-            <h2 class="brand-name" style="line-height: 0.6; font-weight: bold;">AN<br><span style="font-size: 8px; font-weight: bold;">Cricket Club</span></h2>
+            <h2 class="brand-name" style="line-height: 0.6;font-size: 24px; font-weight: 700;">Tiya<br><span style="font-size: 10px; font-weight: bold;">GOLF CLUB</span></h2>
         </div>
         <nav class="nav">
             <a class="list" href="#home">Home</a>
@@ -30,23 +30,31 @@
             </div>
         </nav>
         <div class="Membership-button">
-            <button class="button">Member Login</button>
+            <button class="button" onclick="show_memberlogin()">Member Login</button>
         </div>
-        <div class="membership-login">
+        <div class="membership-login" id="membership-login">
             <div class="membershiplogin-cointainer">
-                <h2>Member Login</h2>
-                <form action="">
-                    <label for="">Membership No.</label><br>
+                <div class="membership-login-heading">
+                    <h2>Member Login</h2>
+                    <a href="" class="cross" id="close_member_login" onclick="close_membership_login()"><i class="fa-solid fa-xmark"></i></a>
+                </div>
+                <form action="" class="membership-login-form">
+                    <label for="">Membership No.</label> <br> 
                     <input type="text" placeholder="11002560"><br>
                     <label for="">Password</label><br>
                     <input type="password" placeholder="password"><br>
-                    <input type="checkbox">
-                    <label for="">Remember me</label><br>
-                    <button>Login</button><br>
+                    <div class="membership-login-checkbox">
+                        <input type="checkbox" style="margin: 0;">
+                        <label for="">Remember&nbsp;Me</label>
+                    </div><br>
+                    <div class="membership-login-btn-div">
+                        <button class="membership-login-btn">Login</button>
+                    </div>
                     <p><a href="">Forgotten password?</a></p>
-                    <h3>Any Questions? <span>010-020-0340</span></h3>
+                    <h3>Any Questions?&nbsp; <span class="callno">010-020-0340</span></h3>
                 </form>
             </div>
+            <div class="membership-login-footer"></div>
         </div>
     </header>
 
@@ -58,7 +66,7 @@
                     <div class="content">
                         <div class="main-heading">
                             <h1>Welcome to the club</h1>
-                            <h1>AN is <span style="color: #9c27b0; font-weight: bold;">Creative</span></h1>
+                            <h1>Tiya is <span style="color:#f2cc8f;font-weight: 600;">Creative</span></h1>
                         </div>
                         <div class="main-button-row">
                             <a href="#aboutus" class="btn-story">Our Story</a>
@@ -67,7 +75,7 @@
                     </div>
                     <div class="content">
                         <div class="youtube">
-                            <iframe width="560" height="300" src="https://www.youtube.com/embed/pmxfvy3SImg?si=iLi050k3J-G_I0ir" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            <iframe width="560" height="300" src="https://www.youtube.com/embed/MGNgbNGOzh8?si=cmEp0OH5_raMOdCs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
@@ -78,13 +86,13 @@
         <section class="aboutus"id="aboutus" >
             <div class="container1" >
                 <center>
-                    <h1>About Us</h1>
+                    <h1>About Tiya</h1>
                 </center>
                 <div class="about-container">
                     <div class="about-content">
-                        <h2>Club history</h2>
-                        <p>Since 2004, AN is ranked #15 in the top 10 Cricket courses in the world. AN is HTML CSS template for golf clubs. Anyone can modify and use this layout for commercial purposes.</p>
-                        <p>AN Cricket Club is 100% free CSS template provided by TemplateMo website. Please tell your friends about our website. Thank you for visiting.</p>
+                        <h2>Tiya Club history</h2>
+                        <p><b>Since 2004</b>, Tiya is ranked #15 in the top 10 Cricket courses in the world. Tiya is HTML CSS template for golf clubs. Anyone can modify and use this layout for commercial purposes.</p>
+                        <p>Tiya Cricket Club is 100% free CSS template provided by TemplateMo website. Please tell your friends about our website. Thank you for visiting.</p>
                     </div>
                     <div class="about-person">
                         <div class="person-dev">
@@ -92,7 +100,7 @@
                                 <img src="./img/male.jpg" alt="">
                             </div>
                             <div class="person-name">
-                                <h2>Adhithya</h2>
+                                <h2>Michael</h2>
                                 <p>Founder</p>
                             </div>
                         </div>
@@ -102,7 +110,7 @@
                             <img src="./img/female.jpg" alt="">
                         </div>
                         <div class="person-name">
-                            <h2>Niketha</h2>
+                            <h2>Sandy</h2>
                             <p>Co-Founder</p>
                         </div>
                     </div>
@@ -125,7 +133,7 @@
                                 <input type="mail" placeholder="Email Address">
                             </div>
                             <div class="mail-btn">
-                                <a href="">Subscribe</a>
+                                <button class="mail-btn1">Subscribe</button>
                             </div>
                         </div>
                     </div>
@@ -158,31 +166,31 @@
                                     <td><i class="fa-solid fa-circle-check"id="crt"></i></td>
                                 </tr>
                                 <tr>
-                                    <td class="table-text">Golf Insurance</td>
+                                    <td class="table-text">Club Facilities</td>
                                     <td><i class="fa-solid fa-circle-check"id="crt"></i></td>
                                     <td><i class="fa-solid fa-circle-check"id="crt"></i></td>
                                     <td><i class="fa-solid fa-circle-check"id="crt"></i></td>
                                 </tr>
                                 <tr>
-                                    <td class="table-text">Golf Insurance</td>
+                                    <td class="table-text">Country Club</td>
                                     <td><i class="fa-solid fa-circle-xmark"id="wrong"></i></td>
                                     <td><i class="fa-solid fa-circle-check"id="crt"></i></td>
                                     <td><i class="fa-solid fa-circle-check"id="crt"></i></td>
                                 </tr>
                                 <tr>
-                                    <td class="table-text">Golf Insurance</td>
+                                    <td class="table-text">Weekend Seasonal</td>
                                     <td><i class="fa-solid fa-circle-xmark"id="wrong"></i></td>
                                     <td><i class="fa-solid fa-circle-check"id="crt"></i></td>
                                     <td><i class="fa-solid fa-circle-check"id="crt"></i></td>
                                 </tr>
                                 <tr>
-                                    <td class="table-text">Golf Insurance</td>
+                                    <td class="table-text">Premium Courses</td>
                                     <td><i class="fa-solid fa-circle-xmark"id="wrong"></i></td>
                                     <td><i class="fa-solid fa-circle-xmark"id="wrong"></i></td>
                                     <td><i class="fa-solid fa-circle-check"id="crt"></i></td>
                                 </tr>
                                 <tr>
-                                    <td class="table-text">Golf Insurance</td>
+                                    <td class="table-text">Pro's Networking</td>
                                     <td><i class="fa-solid fa-circle-xmark" id="wrong"></i></td>
                                     <td><i class="fa-solid fa-circle-xmark"id="wrong"></i></td>
                                     <td><i class="fa-solid fa-circle-check"id="crt"></i></td>
@@ -215,8 +223,7 @@
                     <div class="event-contant">
                         <div class="event-date">
                             <h2>24</h2>
-                            <h3>Feb</h3>
-                            <h3>2048</h3>
+                            <h3>Feb 2048</h3>
                         </div>
                         <div class="event-img">
                             <img src="./img/event-img1.jpg" alt="">
@@ -240,8 +247,7 @@
                     <div class="event-contant" id="event-contant">
                         <div class="event-date">
                             <h2>24</h2>
-                            <h3>Feb</h3>
-                            <h3>2048</h3>
+                            <h3>Feb 2048</h3>
                         </div>
                         <div class="event-img">
                             <img src="./img/event-img2.jpg" alt="">
@@ -269,7 +275,7 @@
         <!-- contact -->
         <section class="contact" id="contact">
             <div class="container1">
-                <h1>Contact</h1>
+                <h1>Contact Tiya</h1>
                 <div class="contact-container">
                     <div class="contact-form">
                         <form action="" class="contact-detail-form">
@@ -304,7 +310,7 @@
                             <img src="./logo.png" alt="">
                         </div>
                         <div class="foot-name">
-                            <h2>AN</h2>
+                            <h2>Tiya</h2>
                             <p>Cricket Club</p>
                         </div>
                     </div>
