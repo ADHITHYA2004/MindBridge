@@ -21,9 +21,7 @@ body{
 .header{
     display: flex;
     justify-content: space-between;
-    /* width: 100%; */
     padding: 40px;
-    /* background-color: black; */
 }
 .navbarr{
     padding: 20px;
@@ -172,6 +170,9 @@ body{
     width: 90px;
     height: 90px;
 }
+.feature-img:hover{
+    background-color: #ee626b;
+}
 .feature-img img{
     margin-top: 25px;
 }
@@ -186,7 +187,7 @@ body{
 
 /* container */
 .container{
-    /* padding: 0 30px; */
+    padding: 0 30px;
 }
 /* trending page */
 .trending-page{
@@ -221,7 +222,9 @@ body{
     border-radius: 30px;
     border: none;
 }
-
+.trending-page-view-btn button:hover{
+    background-color: #008af8;
+}
 .trending-page-cards-row{
     margin-top: 60px;
     height: 100%;
@@ -274,6 +277,9 @@ body{
     margin-top: -10px;
     font-weight: 600;
 }
+.trending-page-cards-contant h4:hover {
+    color: #008af8;
+}
 .trending-page-cards-link{
     margin: 0 20px 0 0;
 }
@@ -283,11 +289,61 @@ body{
     color: white;
     background-color: #ee626b;
 }
+.trending-page-cards-link i:hover{
+    background-color: #008af8;
+}
 
 
 /* most played page */
+
+
+.top-game-page-card-row{
+    margin-top: 70px;
+}
 .section-most-played{
     margin: 120px 0 0 0;
     padding: 100px 0 0 0;
-    border:black 2px solid
+    height :666.385px;
+    border-radius: 150px;
+    background-color: #f7f7f7;
+}
+.top-game-single-card{
+    padding: 0 8px;
+    display: inline-block;
+}
+.card-img-most{
+    border-radius: 25px;
+}
+#top-game-card{
+    border-radius: 25px;
+    background-color: white;
+    text-align: center;
+    border: none;
+}
+#top-game-card img{
+    border-radius: 20px;
+}
+#top-game-card p{
+    font-size: 15px;
+    color: #7a7a7a;
+}
+#top-game-card h4{
+    margin-top: -10px;
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+.trending-page-cards-link{
+    margin-left: -70px;
+}
+.trending-page-cards-link a{
+    text-decoration: none;
+    position: absolute;
+    background-color: #ee626b;
+    padding: 10px;
+    color:white;
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: -20px;
+    border-radius: 20px;
 }
