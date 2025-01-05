@@ -1,0 +1,207 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, sans-serif;
+
+}
+a{
+    text-decoration: none !important;
+}
+.container{
+    padding: 0 30px;
+}
+.header-area{
+    position: absolute;
+    /* background-color: transparent; */
+    top: 30px;
+    margin-top: 0;
+    z-index: 100;
+    transition: all .5s ease 0s;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    /* padding: 40px; */
+    margin-left: 40px;
+    gap: 310px;
+}
+.navbarr{
+    padding: 20px;
+
+}
+.logo{
+    margin-left: 20px;
+    /* background-color: red; */
+}
+.list{
+    font-size: 16px;
+    margin-right: 20px;
+    color: white;
+    font-weight: 300;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+.list:hover{
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+}
+#signin-btn{
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 15px;
+    background-color: #ee626b;
+}
+
+/* page heading */
+.page-heading{
+    background-image: url(./img/page-heading-bg.jpg);
+    border-radius: 0 0 150px 150px;
+    background-position: center bottom;
+    background-size: cover;
+    padding: 200px 0 100px 0;
+}
+
+.heading-contant{
+    color: white;
+    text-align: center;
+}
+.heading-contant h3{
+    font-size: 48px;
+    margin: 20px 0;
+    font-weight: 700;
+}
+
+
+/* trending page */
+
+.trending-section{
+    margin: 120px 0 0 0;
+}
+.filter{
+    list-style: none;
+    text-align: center;
+    margin: 0 0 70px 0;
+}
+.filter li{
+    display: inline;
+    margin: 5px 8px;
+}
+.filter li a{
+    padding: 10px 15px;
+    background-color:#eeeeee;
+    color: black;
+    border-radius: 30px;
+    font-weight: 600;
+}
+
+/* cards */
+
+
+.trendin-games{
+
+    margin-top: 60px;
+}
+
+.trending-page-cards-row{
+    margin-bottom: 30px;
+    height: 100%;
+    display: flex;
+}
+.single-card{
+    padding: 0 10px;
+}
+#card1{
+    border-radius: 25px;
+    background-color: #eeeeee;
+}
+
+#card-img-top{
+    height: 191px;
+    border-radius: 25px;
+}
+.trending-page-cards-rate{
+    position: absolute;
+    background-color: #008af8;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 10px;
+    margin: 18px 0 0 70%;
+    text-align: center;
+}
+.trending-page-card-top-rate em{
+    text-decoration: line-through;
+    margin-top: 0;
+    font-size: 14px;
+}
+.trending-page-card-top-rate{
+    font-weight: 800;
+    font-size: 17px;
+}
+.card-body1{
+    margin: 25px 0 15px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.trending-page-cards-contant {
+    margin-left: 20px;
+}
+.trending-page-cards-contant p{
+    font-size: 15px;
+    color:#7a7a7a;
+}
+.trending-page-cards-contant h4{
+    font-size: 17px;
+    margin-top: -10px;
+    font-weight: 600;
+}
+.trending-page-cards-contant h4:hover {
+    color: #008af8;
+}
+.trending-page-cards-link{
+    margin: 0 20px 0 0;
+}
+.trending-page-cards-link i{
+    padding: 15px;
+    border-radius: 50%;
+    color: white;
+    background-color: #ee626b;
+}
+.trending-page-cards-link i:hover{
+    background-color: #008af8;
+}
+
+
+.foot-navigation{
+    margin: 90px 0 0 0;
+}
+
+
+
+
+
+
+
+
+footer{
+    margin-top: 150px;
+    background-color: #0071f8;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(./img/footer-bg.jpg);
+    min-height: 150px;
+    border-radius: 150px 150px 0px 0px;
+}
+footer p{
+    text-align: center;
+    line-height: 90px;
+    color: white;
+    font-size: 17px;
+    font-weight: 400;
+}
+footer p a{
+    color: white;
+}
+footer p a:hover{
+    opacity: 0.75;
+}
