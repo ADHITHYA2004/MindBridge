@@ -12,7 +12,6 @@ body{
 }
 .header-area{
     position: absolute;
-    /* background-color: transparent; */
     top: 30px;
     margin-top: 0;
     z-index: 100;
@@ -118,7 +117,6 @@ body{
     max-width: 350px;
     height: 50;
     padding: 0 20px;
-
     padding: 0px 25px;
     border-radius: 30px;
     background-color: white;
@@ -128,7 +126,6 @@ body{
     padding: 17px 0;
     width: 243px;
     font-size: 16px;
-    /* position: relative; */
 }
 .home-search-input:focus {
     outline: none;
@@ -155,7 +152,6 @@ body{
 }
 .right-contant img{
     width: 355px;
-    /* height: 434px;    */
     border-radius: 25px;
 }
 .home-price{
@@ -186,7 +182,6 @@ body{
     margin-left: 60px;
     display: flex;
     gap: 20px;
-    /* justify-content: space-around; */
 }
 .feature-row{
     background-color: white;
@@ -234,7 +229,6 @@ body{
 .trending-page-heading-div{
     display: flex;
     justify-content: space-between;
-    /* border: black 2px solid; */
 }
 .trending-page-heading-div h6{
     color: #ee626b;
@@ -433,14 +427,11 @@ body{
 }
 .cta-contant{
     display: flex;
-    /* justify-content: space-between; */
     height: 668px;
-    /* gap: 100px; */
 }
 .cta-left{
     margin: 80px 0 0 0;
     width: 451px;
-    /* height: 608px; */
     padding: 80px;
     background-color: #f7f7f7;
     border-radius: 25px;
@@ -470,7 +461,70 @@ body{
     border: none;
     border-radius: 25px;
 }
-
+.cta-right{
+    margin-left: 200px;
+}
+.cta-right-contant{
+    width: 451px;
+    margin: 200px 0 0;
+    border-radius: 25px;
+    padding: 80px 60px;
+    background-color: #f7f7f7;
+}
+.cta-right-contant h2{
+    margin: 20px 0 0 0;
+    font-size: 34px;
+    font-weight: 800;
+}
+.cta-right-contant h6{
+    font-size: 15px;
+    font-weight: 600;
+    color: #ee626b;
+}
+.cta-right-contant p{
+    margin: 50px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #4a4a4a;
+}
+.subscribe-form{
+    margin-top: 60px;
+    padding: 0 20px;
+    padding: 0px 25px;
+    border-radius: 30px;
+    background-color: white;
+}
+.sub-mail{
+    border:none;
+    padding: 12px 0;
+    width: 143px;
+    font-size: 16px;
+}
+.sub-mail:focus{
+    outline: none;
+    border: none;
+}
+.subscribe-btn{
+    position: absolute;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    margin: 0;
+    border-radius: 30px;
+    border: none;
+    background-color: #ee626b;
+}
+.cta-bg{
+    margin-left: 25%;
+    border-radius: 25px;
+    position: absolute;
+    width: 500px;
+    height: 100%;
+    background-image: url(./img/cta-bg.jpg);
+    background-repeat: no-repeat;
+    z-index: -3;
+}
 footer{
     margin-top: 150px;
     background-color: #0071f8;
