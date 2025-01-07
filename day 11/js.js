@@ -86,7 +86,8 @@ if(v>=18){
 // Simple BMI Calculator
 let height=prompt("enter the height");
 let weight=prompt("enter the weight");
-let BMI=
+let BMI = weight / (height ** 2);
+alert("Your BMI is: "+ BMI);
 
 
 
@@ -139,9 +140,8 @@ for(let i=0;i<ar3.length;i++){
 
 
 // Replace Words
-
-
-
+let j="i love programming"
+console.log(j.replace("programming","javascript"));
 
 // Split Sentence into Words
 let input1= "Hello world";
