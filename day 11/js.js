@@ -72,9 +72,13 @@ alert("welcome to my website")
 
 
 // User Confirmation
-confirm("You chose to continue! i");
-confirm("You canceled!")
-
+let r=confirm("do you want to continue")
+if(r){
+    alert("You chose to continue! i");
+}
+else{
+    alert("You canceled!")
+}
 
 // Prompt for Age
 let v=prompt("enter the age");
