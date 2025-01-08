@@ -62,6 +62,14 @@ for(let i=0;i<10;i++){
     console.log(w*i);
     
 }
+// Count Digits in a Number
+
+let g=prompt("enter the number");
+let count12=0;
+while(g>0){
+    g=Math.floor(g/10);
+    count12++;
+}
 
 
 
