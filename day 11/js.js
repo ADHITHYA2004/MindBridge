@@ -39,7 +39,6 @@ else{
 
 // grade System
 let q = parseFloat(prompt("Enter the mark:"));
-
 switch (true) {
     case (q <= 100 && q >= 90):
         console.log("A");
@@ -139,7 +138,7 @@ else{
 let input9="adhithya sivakumar"
 let ar3=input9.split(" ");
 for(let i=0;i<ar3.length;i++){
-
+    console.log(ar3[i].toUpperCase().charAt(0));
 }
 
 
