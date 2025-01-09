@@ -60,5 +60,11 @@ let str4=prompt("enter the string");
 
 function fun4(str4){
     let g="";
-    for(let i=0)
+    for(let i=0;i<str4.length;i++){
+        if(g.indexOf(str4[i]) === -1)
+            g+= str4[i];
+        
+    }
+    return g;
 }
+console.log(fun4(str4));
