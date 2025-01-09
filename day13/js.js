@@ -18,12 +18,11 @@ console.log(funi(employees));
 // task 2
 
 const nums1 = [1, 2, 3, 4, 5, 6];
-const numb={even:[], odd:[ ]};
-for(let x of nums1){
-    if(num1%2==0){
-        Object.assign(numb)
-    }
+const numb={
+    odd: nums1.filter((i, index) => (index+1)%2==0),
+    even: nums1.filter((i,index) =>(index+1)%2 !=0)
 }
+console.log(numb);
 
 
 
@@ -64,13 +63,43 @@ console.log(arr12);
 
 
 // task 6
-const arr0 = [ { id: 1, name: 'A' }, { id: 2, name: 'B' }, ];
+const arr6 = [ { id: 1, name: 'A' }, { id: 2, name: 'B' }, ];
+let ans6={};
+arr6.filter((i)=>{
+    ans6[i.id]=i.name;
+})
+console.log(ans6);
 
-console.log(Object.keys(arr0));
-
-
+// task 7
+const arr7 = [1, 2, 2, 3, 4, 4, 5];
+let count7=0;
+const ans7=[];
+for(let i of arr7){
+    let tempcount=0
+    for(let j=i+1;j<arr7.length;j++){
+        if(arr7[i]==arr7[j]){
+            tempcount++;
+        }
+    }
+    if(tempcount==0){
+        ans7.push(arr7[i])
+    }
+}
+console.log(ans7)
 
 
 // task 8
 const obj = { a: 1, b: 2 };
-console.log(Object.)
+let ans=[];
+Object.entries(obj).filter(item=>{
+    ans.push(item)
+})
+console.log(ans);
+
+
+// task 9
+const obj1 = { a: 1, b: 2, c: 3 };
+
+let ans9=Object.fromEntries(Object.entries(obj1).filter(([key, value])=>value <= 2));
+
+console.log(ans9)
