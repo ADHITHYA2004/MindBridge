@@ -16,11 +16,25 @@ console.log("the largest string " + fun1(str1));
 
 // task2
 
-let str2=prompt("enter the string for task 2");
-
+let str2=prompt("enter the string for task 2").split(" ");
+let str22="CHANGED"
+let duplicate=new set();
 function fun2(str2){
-    let 
+    let change="";
+    let duplicate=new set();
+    for(let i=0;i<str2.length;i++){
+        if(change.indexOf(str2(i)) ==-1){
+            change+=str2[i];
+
+        }
+        else{
+            change+=str22;
+        }
+    }
+    return change;
 }
+console.log(fun2(str2));
+
 
 
 // task3
@@ -41,3 +55,10 @@ function fun3(str3){
 console.log(fun3(str3));
 
 
+// task 4
+let str4=prompt("enter the string");
+
+function fun4(str4){
+    let g="";
+    for(let i=0)
+}
