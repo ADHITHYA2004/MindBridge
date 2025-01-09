@@ -62,6 +62,8 @@ for(let i=0;i<10;i++){
     console.log(w*i);
     
 }
+
+
 // Count Digits in a Number
 
 let g=prompt("enter the number");
@@ -70,7 +72,6 @@ while(g>0){
     g=Math.floor(g/10);
     count12++;
 }
-
 
 
 // Dialog Box Tasks
@@ -181,3 +182,15 @@ for(let i=0;i<arrr.length;i++){
     }
 }
 console.log(count5);
+
+
+
+
+
+// 
+
+let name="adhithya";
+let sum=0;
+for(let i=0;i<name.length;i++){
+    sum+=name.charCodeAt(i);
+}
