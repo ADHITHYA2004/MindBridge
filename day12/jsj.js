@@ -25,7 +25,6 @@ function fun2(str2){
     for(let i=0;i<str2.length;i++){
         if(change.indexOf(str2(i)) ==-1){
             change+=str2[i];
-
         }
         else{
             change+=str22;
@@ -57,13 +56,15 @@ console.log(fun3(str3));
 
 // task 4
 let str4=prompt("enter the string");
-
+// let str4="i love javascript"
 function fun4(str4){
     let g="";
     for(let i=0;i<str4.length;i++){
-        if(g.indexOf(str4[i]) === -1)
-            g+= str4[i];
-        
+        if(str4[i]===" "){
+            g+=" ";
+        }
+    else if(g.indexOf(str4[i]) === -1)
+        g+= str4[i];
     }
     return g;
 }
