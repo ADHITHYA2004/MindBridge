@@ -21,3 +21,23 @@ let str2=prompt("enter the string for task 2");
 function fun2(str2){
     let 
 }
+
+
+// task3
+let str3=prompt("enter the string").split(" ");
+
+function fun3(str3){
+    let newString="";
+    for(let i=0;i<str3.length;i++){
+        if(i%2==0){
+            newString+="EVEN";
+        }
+        else{
+            newString+= " " +str3[i] +" ";
+        }
+    }
+    return newString;
+}
+console.log(fun3(str3));
+
+
