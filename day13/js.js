@@ -5,13 +5,11 @@ const employees = [
     { name: 'Anna', age: 22 }, 
     { name: 'Mike', age: 32 },
     ];
-    function fun1(i){
 
-        return employees[1];
-    }
-console.log(funi(employees));
-
-
+    employees.sort((x,y)=>{
+        return x.age-y.age;
+    })
+console.log(employees);
 
 
 
@@ -25,7 +23,15 @@ const numb={
 console.log(numb);
 
 
+// task 3
 
+const data = [ { id: 1, name: 'A' }, { id: 2, name: 'B' }, { id: 1, name: 'C' }, ];
+let ans3=[];
+data.filter( i =>{
+    if(!ans3.some(ansobj=>ansobj.id==i.id))
+        ans3.push(i);
+})
+console.log(ans3);
 
 // task4
 const arr = [1, 2, 2, 3, 3, 3];
