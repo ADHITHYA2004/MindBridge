@@ -109,3 +109,18 @@ const obj1 = { a: 1, b: 2, c: 3 };
 let ans9=Object.fromEntries(Object.entries(obj1).filter(([key, value])=>value <= 2));
 
 console.log(ans9)
+
+
+
+// task 10
+arr = [1, 2, 3, 5]
+b = [4, 7,3]
+c = 6
+arr10=[arr,b,c];
+arr11=arr10.flat()
+arr12=arr11.filter((i, j)=>{
+    if(arr11.indexOf(i)==j)
+    return i;
+})
+
+console.log(arr12)
