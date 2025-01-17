@@ -93,6 +93,23 @@ for(let i of arr7){
 }
 console.log(ans7)
 
+// task 7
+
+const arr_7 = [1,2,2,3,4,4,5];
+let result_7 = arr7.filter((i,j)=>{
+    if(arr7.indexOf(i)!=j)
+        return i;
+}
+);
+
+// result_7  = arr_7.reduce((val, item) => {
+//     val[item] = (val[item] || 0) + 1; 
+//     // 1=
+//     return index;
+// }, {});  
+// // 
+// const unique = Object.keys(result_7).filter(key => result_7[key] === 1);
+// console.log(unique);
 
 // task 8
 const obj = { a: 1, b: 2 };
@@ -106,18 +123,19 @@ console.log(ans);
 // task 9
 const obj1 = { a: 1, b: 2, c: 3 };
 
-let ans9=Object.fromEntries(Object.entries(obj1).filter(([key, value])=>value <= 2));
+let ans9=Object.fromEntries(Object.entries(obj1).filter(([key, value])=>
+    value <= 2));
 
 console.log(ans9)
 
 
 
 // task 10
-arr = [1, 2, 3, 5]
-b = [4, 7,3]
-c = 6
-arr10=[arr,b,c];
-arr11=arr10.flat()
+let arr110 = [1, 2, 3, 5]
+let b = [4, 7,3]
+let c = 6
+let arr10=[arr110,b,c];
+let arr11=arr10.flat()
 arr12=arr11.filter((i, j)=>{
     if(arr11.indexOf(i)==j)
     return i;
