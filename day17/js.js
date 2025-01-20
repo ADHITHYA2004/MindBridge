@@ -18,6 +18,8 @@ const employees = [
 
 for (const x of employees) {
     console.log(x);
+
+    
     tablebody.innerHTML+=`<tr>
         <td>${x.id}</td>
         <td>${x.name}</td>
@@ -25,6 +27,8 @@ for (const x of employees) {
         <td>${x.department}</td>
     </tr>`;
 }
+
+
 
 
 // table 2
