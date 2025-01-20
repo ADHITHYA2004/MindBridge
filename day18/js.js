@@ -49,16 +49,66 @@ document.getElementById('submit').addEventListener('click', function(e) {
 
 // regex
     const namepattern=/[a-zA-Z]/;
-    const agepattern=/^[0-9][0-9]$/;
+    const agepattern=/^[0-9]?[0-9]$/;
+    const phonepattern=/^[6-9]{1}[0-9]{9}$/;
+    const dobpattern=/^[0-9]{2}[/]{1}[0-9]{1}[0-9]{1}[/][1-2]{1}[0-9]{3}$/;
 
+    const namematch= namepattern.test(personname);
     const agematch = agepattern.test(age);
-    console.log(agematch);
-    if(agematch==false){
-        document.getElementById('error_age').style.display='block'
+    const phonematch = phonepattern.test(phone_number);
+    const dobmatch = dobpattern.test(dob);
+
+    // console.log(agematch);
+    var subjectmatch=0;
+    var gendermatch=0;
+    if(namematch==false){
+        document.getElementById('error_name').style.display='block'
         alert('enter the name correctly');
     }
+    else{
+        document.getElementById('error_name').style.display='none'
+    }
+    if(agematch==false){
+        document.getElementById('error_age').style.display='block'
+        alert('enter the age correctly');
+    }
+    else{
+        document.getElementById('error_age').style.display='none'
+    }
+    if(phonematch==false){
+        document.getElementById('error_number').style.display='block'
+        alert('enter the phone no. correctly');
+    }
+    else{
+        document.getElementById('error_number').style.display='none'
+    }
+    if(gender1==''){
+        document.getElementById('error_gender').style.display='block'
+        alert('Select the gender');
+    }
+    else{
+        document.getElementById('error_gender').style.display='none'
+        gendermatch=1;
+    }
+    if(subjects==''){
+        document.getElementById('error_subject').style.display='block'
+        alert('Select atleast one ');
+    }
+    else{
+        document.getElementById('error_subject').style.display='none'
+        subjectmatch=1;
+    }
+    if(dobmatch==false){
+        document.getElementById('error_dob').style.display='block'
+        alert('enter the Dob correctly');
+    }
+    else{
+        document.getElementById('error_dob').style.display='none'
+    }
+    
 
-    if(agematch==true){
+    if(agematch==true && namematch==true &&phonematch==true &&dobmatch==true &&gendermatch==1 && subjectmatch==1){
+
         table_data.appendChild(newRow);
     }
 })
