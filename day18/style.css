@@ -4,12 +4,12 @@
 }
 .contant{
     display: flex;
-    padding: 30px;
-    gap: 20px;
+    padding: 30px 5px;
+    gap: 0px;
 }
 .formm{
     margin: 20px 0;
-    width: 50%;
+    width: 400px;
 
 }
 form{
@@ -93,7 +93,7 @@ form select{
     margin: 30px 0;
 }
 table{
-    margin: 30px 20px ;
+    margin: 30px 50px ;
 }
 thead{
     background-color: rgb(211, 219, 219);
@@ -104,22 +104,22 @@ table,tr,td,th{
 }
 td,th{
     padding: 10px;
-    min-width: 80px;
-    max-width: 100px;
+    min-width: 70px;
+    /* max-width: 110px; */
 }
 
 #delete_row{
-    padding: 2px;
+    /* padding: 2px;
     background-color: red;
-    /* font-size: 15px; */
+    font-size: 15px;
     border-radius: 15px;
-    border-color: red;
+    border-color: red; */
 }
 
 #edit_row{
-    /* padding: 2px; */
+    /* padding: 2px;
     background-color: green;
-    /* font-size: 15px; */
-    /* border-radius: 15px; */
-    border-color: green;
+    font-size: 15px;
+    border-radius: 10px;
+    border-color: green; */
 }

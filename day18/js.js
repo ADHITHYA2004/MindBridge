@@ -41,8 +41,8 @@ document.getElementById('submit').addEventListener('click', function(e) {
         <td>${subjects}</td>
         <td>${dob}</td>
         <td>${location}</td>
-        <td><button id='delete_row' onclick='delete_row(event)'>Delete</button>
-        <button id='edit_row' onclick='edit_row(event)'>Edit</button></td> 
+        <td><i id='delete_row' onclick='delete_row(event)' class="fa-solid fa-trash"></i> 
+        <i id='edit_row' onclick='edit_row(event)' class="fa-solid fa-pen-to-square"></i></td> 
     `;
 
     // regex
@@ -110,7 +110,23 @@ document.getElementById('submit').addEventListener('click', function(e) {
     if(agematch==true && namematch==true &&phonematch==true &&dobmatch==true &&gendermatch==1 && subjectmatch==1 &&locationmatch!='none'){
 
         table_data.appendChild(newRow);
+        document.getElementById('person_name').value='';
+        document.getElementById('age').value='';
+        document.getElementById('phone').value='';
+        for (i = 0; i < gender.length; i++) {
+            if (gender[i].checked){
+                gender[i].checked=false;
+            }
+        }
+        let subjects='';
+        for (i = 0; i < subject.length; i++) {
+            if (subject[i].checked){
+                subject[i].checked=false;
+            }
+        }
+        document.getElementById('dob').value='';
     }
+
     
 })
 
@@ -136,17 +152,18 @@ function edit_row(event) {
     document.getElementById('person_name').value = name;
     document.getElementById('age').value = age;
     document.getElementById('phone').value = phone_no;
-    document.getElementById('subject').value = subject;
+    // age and subject need to add
     document.getElementById('dob').value = dob;
     document.getElementById('location').value = location;
-    
+
+
     const submit_btn=document.getElementById('submit');
     const update_btn=document.getElementById('update')
     const clear_btn=document.getElementById('clear')
 
     submit_btn.style.display='none';
     update_btn.style.display='block';
-    // clear_btn.style.display='none'
+    clear_btn.style.display='none'
 
     // update
     document.getElementById('update').addEventListener('click', function(et){
@@ -164,7 +181,6 @@ function edit_row(event) {
                 gender1=gender[i].value;
             }
         }
-        console.log("update"+ gender1)
         let subjects='';
         for (i = 0; i < subject.length; i++) {
             if (subject[i].checked){
@@ -172,76 +188,78 @@ function edit_row(event) {
             }
         }
         // regex
-    const namepattern=/^[a-zA-Z\s']{2,}$/;
-    const agepattern=/^[0-9]?[0-9]$/;
-    const phonepattern=/^[6-9]{1}[0-9]{9}$/;
-    const dobpattern=/^[0-9]{2}[/]{1}[0-9]{1}[0-9]{1}[/][1-2]{1}[0-9]{3}$/;
+        const namepattern=/^[a-zA-Z\s']{2,}$/;
+        const agepattern=/^[0-9]?[0-9]$/;
+        const phonepattern=/^[6-9]{1}[0-9]{9}$/;
+        const dobpattern=/^[0-9]{2}[/]{1}[0-9]{1}[0-9]{1}[/][1-2]{1}[0-9]{3}$/;
 
-    const namematch= namepattern.test(personname);
-    const agematch = agepattern.test(age);
-    const phonematch = phonepattern.test(phone_number);
-    const dobmatch = dobpattern.test(dob);
+        const namematch= namepattern.test(personname);
+        const agematch = agepattern.test(age);
+        const phonematch = phonepattern.test(phone_number);
+        const dobmatch = dobpattern.test(dob);
 
+        var subjectmatch=0;
+        var gendermatch=0;
+        
+        // error handling
+        if(namematch==false){
+            document.getElementById('error_name').style.display='block'
+        }
+        else{
+            document.getElementById('error_name').style.display='none'
+        }
+        if(agematch==false){
+            document.getElementById('error_age').style.display='block'
+        }
+        else{
+            document.getElementById('error_age').style.display='none'
+        }
+        if(phonematch==false){
+            document.getElementById('error_number').style.display='block'
+        }
+        else{
+            document.getElementById('error_number').style.display='none'
+        }
+        if(gender1==''){
+            document.getElementById('error_gender').style.display='block'
+        }
+        else{
+            document.getElementById('error_gender').style.display='none'
+            gendermatch=1;
+        }
+        if(subjects==''){
+            document.getElementById('error_subject').style.display='block'
+        }
+        else{
+            document.getElementById('error_subject').style.display='none'
+            subjectmatch=1;
+        }
+        if(dobmatch==false){
+            document.getElementById('error_dob').style.display='block'
+        }
+        else{
+            document.getElementById('error_dob').style.display='none'
+        }
+        
+        if(agematch==true && namematch==true &&phonematch==true &&dobmatch==true &&gendermatch==1 && subjectmatch==1 ){
 
-    var subjectmatch=0;
-    var gendermatch=0;
-    
-    // error handling
-    if(namematch==false){
-        document.getElementById('error_name').style.display='block'
-        alert('enter the name correctly');
-    }
-    else{
-        document.getElementById('error_name').style.display='none'
-    }
-    if(agematch==false){
-        document.getElementById('error_age').style.display='block'
-        alert('enter the age correctly');
-    }
-    else{
-        document.getElementById('error_age').style.display='none'
-    }
-    if(phonematch==false){
-        document.getElementById('error_number').style.display='block'
-        alert('enter the phone no. correctly');
-    }
-    else{
-        document.getElementById('error_number').style.display='none'
-    }
-    if(gender1==''){
-        document.getElementById('error_gender').style.display='block'
-        alert('Select the gender');
-    }
-    else{
-        document.getElementById('error_gender').style.display='none'
-        gendermatch=1;
-    }
-    if(subjects==''){
-        document.getElementById('error_subject').style.display='block'
-        alert('Select atleast one ');
-    }
-    else{
-        document.getElementById('error_subject').style.display='none'
-        subjectmatch=1;
-    }
-    if(dobmatch==false){
-        document.getElementById('error_dob').style.display='block'
-        alert('enter the Dob correctly');
-    }
-    else{
-        document.getElementById('error_dob').style.display='none'
-    }
-    
-    if(agematch==true && namematch==true &&phonematch==true &&dobmatch==true &&gendermatch==1 && subjectmatch==1){
+            row.children[0].textContent=document.getElementById('person_name').value
+            row.children[1].textContent=document.getElementById('age').value;
+            row.children[2].textContent=document.getElementById('phone').value;
+            row.children[3].textContent=gender1;
+            row.children[4].textContent=subjects;
+            row.children[5].textContent=document.getElementById('dob').value;
+            row.children[6].textContent=document.getElementById('location').value;
 
-        row.children[0].textContent=document.getElementById('person_name').value
-        row.children[1].textContent=document.getElementById('age').value;
-        row.children[2].textContent=document.getElementById('phone').value;
-        row.children[3].textContent=gender1;
-        row.children[4].textContent=subjects;
-        row.children[5].textContent=document.getElementById('dob').value;
-        row.children[6].textContent=document.getElementById('location').value;
-    }
+            document.getElementById('person_name').value='';
+            document.getElementById('age').value='';
+            document.getElementById('phone').value='';
+            document.getElementById('dob').value='';
+
+            submit_btn.style.display='block';
+            update_btn.style.display='none';
+            // clear_btn.style.display='block'
+        }
 
 
     })
