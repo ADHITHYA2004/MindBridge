@@ -11,13 +11,13 @@ document.getElementById("submit").addEventListener("click", function (e) {
     var gender1 = "";
     for (i = 0; i < gender.length; i++) {
         if (gender[i].checked) {
-        gender1 = gender[i].value;
+            gender1 = gender[i].value;
         }
     }
     let subjects = "";
     for (i = 0; i < subject.length; i++) {
         if (subject[i].checked) {
-        subjects += subject[i].value + ", ";
+            subjects += subject[i].value + ", ";
         }
     }
     console.log(personname);
@@ -112,28 +112,28 @@ document.getElementById("submit").addEventListener("click", function (e) {
         document.getElementById("age").value = "";
         document.getElementById("phone").value = "";
         for (i = 0; i < gender.length; i++) {
-        if (gender[i].checked) {
-            gender[i].checked = false;
-        }
+            if (gender[i].checked) {
+                gender[i].checked = false;
+            }
         }
         let subjects = "";
         for (i = 0; i < subject.length; i++) {
-        if (subject[i].checked) {
-            subject[i].checked = false;
-        }
+            if (subject[i].checked) {
+                subject[i].checked = false;
+            }
         }
         document.getElementById("dob").value = "";
     }
-    });
+});
 
-    // delete
-    function delete_row(event) {
+// delete
+function delete_row(event) {
     const row = event.target.closest("tr");
     row.remove();
-    }
+}
 
-    // edit
-    function edit_row(event) {
+// edit
+function edit_row(event) {
     event.preventDefault();
     const row = event.target.closest("tr");
 
@@ -171,15 +171,15 @@ document.getElementById("submit").addEventListener("click", function (e) {
         var location = document.getElementById("location").value;
         var gender1 = "";
         for (i = 0; i < gender.length; i++) {
-        if (gender[i].checked) {
-            gender1 = gender[i].value;
-        }
+            if (gender[i].checked) {
+                gender1 = gender[i].value;
+            }
         }
         let subjects = "";
         for (i = 0; i < subject.length; i++) {
-        if (subject[i].checked) {
-            subjects += subject[i].value + ", ";
-        }
+            if (subject[i].checked) {
+                subjects += subject[i].value + ", ";
+            }
         }
         // regex
         const namepattern = /^[a-zA-Z\s']{2,}$/;
@@ -197,63 +197,63 @@ document.getElementById("submit").addEventListener("click", function (e) {
 
         // error handling
         if (namematch == false) {
-        document.getElementById("error_name").style.display = "block";
+            document.getElementById("error_name").style.display = "block";
         } else {
-        document.getElementById("error_name").style.display = "none";
+            document.getElementById("error_name").style.display = "none";
         }
         if (agematch == false) {
-        document.getElementById("error_age").style.display = "block";
+            document.getElementById("error_age").style.display = "block";
         } else {
-        document.getElementById("error_age").style.display = "none";
+            document.getElementById("error_age").style.display = "none";
         }
         if (phonematch == false) {
-        document.getElementById("error_number").style.display = "block";
+            document.getElementById("error_number").style.display = "block";
         } else {
-        document.getElementById("error_number").style.display = "none";
+            document.getElementById("error_number").style.display = "none";
         }
         if (gender1 == "") {
-        document.getElementById("error_gender").style.display = "block";
+            document.getElementById("error_gender").style.display = "block";
         } else {
-        document.getElementById("error_gender").style.display = "none";
-        gendermatch = 1;
+            document.getElementById("error_gender").style.display = "none";
+            gendermatch = 1;
         }
         if (subjects == "") {
-        document.getElementById("error_subject").style.display = "block";
+            document.getElementById("error_subject").style.display = "block";
         } else {
-        document.getElementById("error_subject").style.display = "none";
-        subjectmatch = 1;
+            document.getElementById("error_subject").style.display = "none";
+            subjectmatch = 1;
         }
         if (dobmatch == false) {
-        document.getElementById("error_dob").style.display = "block";
+            document.getElementById("error_dob").style.display = "block";
         } else {
-        document.getElementById("error_dob").style.display = "none";
+            document.getElementById("error_dob").style.display = "none";
         }
 
         if (
-        agematch == true &&
-        namematch == true &&
-        phonematch == true &&
-        dobmatch == true &&
-        gendermatch == 1 &&
-        subjectmatch == 1
+            agematch == true &&
+            namematch == true &&
+            phonematch == true &&
+            dobmatch == true &&
+            gendermatch == 1 &&
+            subjectmatch == 1
         ) {
-        row.children[0].textContent =
-            document.getElementById("person_name").value;
-        row.children[1].textContent = document.getElementById("age").value;
-        row.children[2].textContent = document.getElementById("phone").value;
-        row.children[3].textContent = gender1;
-        row.children[4].textContent = subjects;
-        row.children[5].textContent = document.getElementById("dob").value;
-        row.children[6].textContent = document.getElementById("location").value;
+            row.children[0].textContent =
+                document.getElementById("person_name").value;
+            row.children[1].textContent = document.getElementById("age").value;
+            row.children[2].textContent = document.getElementById("phone").value;
+            row.children[3].textContent = gender1;
+            row.children[4].textContent = subjects;
+            row.children[5].textContent = document.getElementById("dob").value;
+            row.children[6].textContent = document.getElementById("location").value;
 
-        document.getElementById("person_name").value = "";
-        document.getElementById("age").value = "";
-        document.getElementById("phone").value = "";
-        document.getElementById("dob").value = "";
+            document.getElementById("person_name").value = "";
+            document.getElementById("age").value = "";
+            document.getElementById("phone").value = "";
+            document.getElementById("dob").value = "";
 
-        submit_btn.style.display = "block";
-        update_btn.style.display = "none";
-        // clear_btn.style.display='block'
+            submit_btn.style.display = "block";
+            update_btn.style.display = "none";
+            // clear_btn.style.display='block'
         }
     });
 }

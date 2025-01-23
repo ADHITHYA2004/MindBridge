@@ -1,18 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Quiz Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
-        
+        .quiz-page {
+            margin-top: 20px;
+
+        }
+
+        .question-div {
+            margin-top: 40px;
+        }
+
+        .heading {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 30px;
+        }
+        .blur{
+            background-color: rgba(194, 198, 203, 0.516);
+            z-index: 99;
+            width: 100%;
+            height: 200vh;
+            position: absolute;
+            display: none;
+        }
+        .correct{
+            color: green;
+            display: none;
+        }
+        .scorecard{
+            background-color: white;
+            width: 30%;
+            border-radius: 15px;
+            position: fixed;
+            margin-top: 50%;
+            padding: 20px;
+        }
+        .score{
+            color: white;
+            background-color: green;
+            border: none;
+            margin-top: 10px;
+            padding: 5px 10px;
+            border-radius: 15px;
+        }
+        .foot {
+            padding: 0 0 40px;
+        }
+
+
     </style>
 </head>
+
 <body>
+    <div class="blur" id="blur">
+        <center>
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <div class="scorecard" id="">
+                    <p>Your Score</p>
+                    <h1 id="scoreresult"></h1>
+                    <button class="score" id="score-bot">Check Answer</button>
+                </div>
+            </div>
+        </center>
+    </div>
+    <div class="quiz-page">
+
+            <div class="heading">
+                <div id="name_display"></div>
+                <div id="timer">00.00.00</div>
+            </div>
+            <div id="quiz-contant">
     
+            </div>
+    
+            <div class="foot">
+                <center>
+                    <button type="submit" id="submit-but" class="btn btn-primary">submit</button>
+                </center>
+            </div>
+        
+    </div>
 
 
 
-    <script src="./js.js"></script>
+    <script src="./quiz.js"></script>
 </body>
+
 </html>
