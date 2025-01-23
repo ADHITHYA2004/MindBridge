@@ -1,0 +1,35 @@
+a{
+    text-decoration: none;
+    color: white;
+}
+body{
+background-color: rgb(141, 136, 136) !important;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+}
+.form{
+    align-items: center;
+    margin-top: 200px;
+    background-color: rgb(198, 200, 202);
+    width: 30%;
+    box-shadow: 1px 1px 10px black;
+    border-radius: 15px;
+}
+form{
+    padding: 15px;
+
+}
+.inputgrp{
+    margin-bottom: 20px;
+}
+.errortext{
+    color:red;
+    font-size: 14px;
+    display: none;
+}
+.headingdiv{
+    margin-top: 30px;
+}

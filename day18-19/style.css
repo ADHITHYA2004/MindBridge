@@ -105,7 +105,6 @@ table,tr,td,th{
 td,th{
     padding: 10px;
     min-width: 70px;
-    /* max-width: 110px; */
 }
 
 #delete_row{
