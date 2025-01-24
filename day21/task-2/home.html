@@ -13,9 +13,18 @@
 
 <body>
     <div class="main">
-        <div class="home"></div>
-        <div class="booking"></div>
-        <div class="admin">
+        <div class="navbar">
+            <nav class="navbar navbar-light bg-light">
+                <form class="container-fluid justify-content-start">
+                    <button class="btn btn-outline-success me-2" id="home-bot" onclick="home_bot(event)" type="button">Home</button>
+                    <button class="btn btn-outline-success me-2" id="admin-bot" onclick="admin_bot(event)" type="button">Admin</button>
+                    <button class="btn btn-outline-success me-2" id="booking-bot" onclick="booking_bot(event)" type="button">Booking page</button>
+                </form>
+            </nav>
+        </div>
+        <div id="home-page" class="home"></div>
+        <div class="booking-page"></div>
+        <div id="admin-page" class="admin">
             <div class="form d-flex justify-content-center">
                 <div class="form-div shadow p-3 mb-5 bg-body rounded">
                     <form action="">
@@ -34,6 +43,10 @@
                                 <option>Van</option>
                                 <option>Luxury</option>
                             </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="img" class="form-label">Car Image</label>
+                            <input type="text" class="form-control" id="img" required>
                         </div>
                         <div class="mb-3">
                             <label for="Select-transmition" class="form-label">Transmision</label>
@@ -56,7 +69,7 @@
                             <div class="form-floating">
                                 <textarea class="form-control" placeholder="Leave a comment here" id="description"
                                     required></textarea>
-                                <label for="description">Description</label>
+                                <!-- <label for="description">Description</label> -->
                             </div>
                         </div>
                         <center>
@@ -73,15 +86,17 @@
                             <tr>
                                 <th>CAR NAME</th>
                                 <th>CAR TYPE</th>
+                                <th>CAR IMG</th>
+                                <th>TRANSMISION</th>
                                 <th>PRICE</th>
                                 <th>CAPACITY</th>
-                                <th>TRANSMISION</th>
+
                                 <th class="newwidth">DESCRIPTION</th>
                                 <th>ACTION</th>
                             </tr>
                         </thead>
                         <tbody id="table-body">
-                            
+
                         </tbody>
                     </table>
                 </div>

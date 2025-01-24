@@ -1,4 +1,7 @@
 
+.hide{
+    display: none;
+}
 
 
 .form-div{
@@ -12,7 +15,18 @@ th,td{
 /* .newwidth{
     max-width: 300px;
 } */
+.hideimg{
+    max-width: 30px;
+    overflow:hidden;
+}
 td{
-    max-width: 300px;
+    max-width: 200px;
     overflow:auto;
+}
+#delete_row{
+    color: red;
+    margin:0 20px;
+}
+#edit_row{
+color:green;
 }
