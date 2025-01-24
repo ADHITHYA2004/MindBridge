@@ -71,7 +71,7 @@ for (let x = 0; x < questions.length; x++) {
             document.getElementById(`question-content-${x}`).innerHTML +=
             `<div class="form-check">
             <input class="form-check-input" st type="radio" name="option-${x}" id="flexRadioDefault option-${x}" value="${questions[x].options[y].isCorrect}">  
-            ${questions[x].options[y].answer} 
+            ${questions[x].options[y].answer} <p class='wrong' id='wrong-${x}${y}'></p>
         </div>`;
         }
     }
@@ -96,6 +96,15 @@ function totalscore() {
                 if (options[y].value == 'true') {
                     total_score++;
                 }
+                else{
+                    let wrong=document.getElementById(`wrong-${x}${y}`)
+                    wrong.innerHTML=`<i class="fa-regular fa-circle-xmark"></i>`
+                    wrong.style.display='inline'
+                    
+                }
+            }
+            else{
+                
             }
         }
     }

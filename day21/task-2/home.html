@@ -1,12 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./home.css">
     <title>Car Home</title>
 </head>
+
 <body>
-    
+    <div class="main">
+        <div class="home"></div>
+        <div class="booking"></div>
+        <div class="admin">
+            <div class="form d-flex justify-content-center">
+                <div class="form-div shadow p-3 mb-5 bg-body rounded">
+                    <form action="">
+                        <div class="mb-3">
+                            <label for="carname" class="form-label">Car Nmae</label>
+                            <input type="text" class="form-control" id="carname">
+                        </div>
+                        <div class="mb-3">
+                            <label for="select-car-type" class="form-label">Car Type</label>
+                            <select id="select-car-type" class="form-select">
+                                <option>select</option>
+                                <option>SUV</option>
+                                <option>4X4</option>
+                                <option>Small</option>
+                                <option>medium</option>
+                                <option>Van</option>
+                                <option>Luxury</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="Select-transmition" class="form-label">Transmision</label>
+                            <select id="Select-transmition" class="form-select">
+                                <option>select</option>
+                                <option value="Automatic">Automatic</option>
+                                <option value="Manual">Manual</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="capacity" class="form-label">capacity</label>
+                            <input type="number" class="form-control" id="capacity">
+                        </div>
+                        <div class="mb-3">
+                            <label for="price" class="form-label">Price</label>
+                            <input type="number" class="form-control" id="price">
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Description</label>
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="Leave a comment here"
+                                    id="description"></textarea>
+                                <label for="description">Description</label>
+                            </div>
+                        </div>
+                        <center>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="reset" class="btn btn-danger">reset</button>
+                        </center>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="./home.js"></script>
 </body>
+
 </html>

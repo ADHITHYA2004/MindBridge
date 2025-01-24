@@ -10,18 +10,25 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
         .quiz-page {
-            margin-top: 20px;
+
 
         }
 
         .question-div {
             margin-top: 40px;
+
         }
 
         .heading {
             display: flex;
             justify-content: space-between;
             padding: 10px 30px;
+            margin-top: 20px;
+            color: red;
+        }
+        .heading h1{
+            margin-left: -90px;
+            color: blue;
         }
         .blur{
             background-color: rgba(194, 198, 203, 0.516);
@@ -33,6 +40,10 @@
         }
         .correct{
             color: green;
+            display: none;
+        }
+        .wrong{
+            color:red;
             display: none;
         }
         .scorecard{
@@ -75,6 +86,9 @@
 
             <div class="heading">
                 <div id="name_display"></div>
+                <div>
+                    <h1>Quiz time</h1>
+                </div>
                 <div id="timer">00.00.00</div>
             </div>
             <div id="quiz-contant">
