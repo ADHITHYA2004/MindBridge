@@ -20,13 +20,13 @@
                 <div class="form-div shadow p-3 mb-5 bg-body rounded">
                     <form action="">
                         <div class="mb-3">
-                            <label for="carname" class="form-label">Car Nmae</label>
-                            <input type="text" class="form-control" id="carname">
+                            <label for="car-name" class="form-label">Car Name</label>
+                            <input type="text" class="form-control" id="car-name" required>
                         </div>
                         <div class="mb-3">
                             <label for="select-car-type" class="form-label">Car Type</label>
-                            <select id="select-car-type" class="form-select">
-                                <option>select</option>
+                            <select id="select-car-type" class="form-select" required>
+                                <option disabled selected>select</option>
                                 <option>SUV</option>
                                 <option>4X4</option>
                                 <option>Small</option>
@@ -37,33 +37,53 @@
                         </div>
                         <div class="mb-3">
                             <label for="Select-transmition" class="form-label">Transmision</label>
-                            <select id="Select-transmition" class="form-select">
-                                <option>select</option>
+                            <select id="Select-transmition" class="form-select" required>
+                                <option disabled selected>select</option>
                                 <option value="Automatic">Automatic</option>
                                 <option value="Manual">Manual</option>
                             </select>
                         </div>
                         <div class="mb-3">
                             <label for="capacity" class="form-label">capacity</label>
-                            <input type="number" class="form-control" id="capacity">
+                            <input type="number" class="form-control" id="capacity" required>
                         </div>
                         <div class="mb-3">
                             <label for="price" class="form-label">Price</label>
-                            <input type="number" class="form-control" id="price">
+                            <input type="number" class="form-control" id="price" required>
                         </div>
                         <div class="mb-3">
                             <label for="description" class="form-label">Description</label>
                             <div class="form-floating">
-                                <textarea class="form-control" placeholder="Leave a comment here"
-                                    id="description"></textarea>
+                                <textarea class="form-control" placeholder="Leave a comment here" id="description"
+                                    required></textarea>
                                 <label for="description">Description</label>
                             </div>
                         </div>
                         <center>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        <button type="reset" class="btn btn-danger">reset</button>
+                            <button type="submit" class="btn btn-primary" id="data-submit">Submit</button>
+                            <button type="reset" class="btn btn-danger">reset</button>
                         </center>
                     </form>
+                </div>
+            </div>
+            <div class="table-div">
+                <div class=" table-contant">
+                    <table class="table  table-striped">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>CAR NAME</th>
+                                <th>CAR TYPE</th>
+                                <th>PRICE</th>
+                                <th>CAPACITY</th>
+                                <th>TRANSMISION</th>
+                                <th class="newwidth">DESCRIPTION</th>
+                                <th>ACTION</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                            
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
