@@ -3,10 +3,10 @@ document.getElementById('data-submit').classList.remove('hide')
 document.getElementById('data-update').classList.add('hide')
 
 // main submit
-let s_no=0;
+let s_no = 0;
 document.getElementById("data-submit").addEventListener("click", function (e) {
     e.preventDefault();
-    
+
     var car_name = document.getElementById('car-name').value;
     var select_car_type = document.getElementById('select-car-type').value;
     for (i = 0; i < select_car_type.length; i++) {
@@ -24,12 +24,12 @@ document.getElementById("data-submit").addEventListener("click", function (e) {
     var capacity = document.getElementById('capacity').value;
     var price = document.getElementById('price').value;
     var description = document.getElementById('description').value;
-    console.log(s_no,car_name + price + select_car_type + select_transmition + capacity + description)
-    adddetails(s_no,car_name, select_car_type, img, select_transmition, price, capacity, description);
+    console.log(s_no, car_name + price + select_car_type + select_transmition + capacity + description)
+    adddetails(s_no, car_name, select_car_type, img, select_transmition, price, capacity, description);
 
     // car details add in array
     car_details.push({
-        s_no:s_no,
+        s_no: s_no,
         car_name: car_name,
         select_car_type: select_car_type,
         img: img,
@@ -40,11 +40,11 @@ document.getElementById("data-submit").addEventListener("click", function (e) {
     });
     resetform();
     addCards()
-    s_no=s_no+1;
+    s_no = s_no + 1;
     console.log(car_details)
 })
 
-function adddetails(s_no,car_name, select_car_type, img, select_transmition, price, capacity, description) {
+function adddetails(s_no, car_name, select_car_type, img, select_transmition, price, capacity, description) {
     const table_body = document.getElementById("table-body");
     const newrow = document.createElement("tr");
     newrow.innerHTML = `
@@ -70,10 +70,11 @@ function addCards() {
         // card.className = 'cardss';
         container.innerHTML += `
             <div class="card" style="width: 18rem; margin:15px">
-            <img src="https://therentalradar.com/_next/image?url=%2Fimages%2Foffers%2Flarge.png&w=256&q=75" class="card-img-top" alt="...">
+            <center><h1>${obj.car_name}</h1></center>
+            <img src="${obj.img}">
             <div class="card-body">
                 <h5 class="card-title">${obj.price}</h5>
-                <p class="card-text">${obj.description}.</p>
+                <p class="card-text">${obj.description}</p>
                 <a href="#" class="btn btn-primary" onclick="book(event)">Book</a>
             </div>
         </div>`;
@@ -88,12 +89,12 @@ function delete_row(event) {
     const row1 = event.target.closest("tr");
     row1.remove();
     const row = event.target.closest("tr");
-    let index=parseInt(row.children[0].textContent, 10)
-    if ( index>= 0 && index < car_details.length) {
+    let index = parseInt(row.children[0].textContent, 10)
+    if (index >= 0 && index < car_details.length) {
         car_details.splice(index, 1);
         console.log(index)
     }
-    
+
 
     addCards();
 }
@@ -102,7 +103,7 @@ function delete_row(event) {
 function edit_row(event) {
     event.preventDefault();
     const row = event.target.closest("tr");
-    let id=parseInt(row.children[0].textContent.trim(), 10);
+    let id = parseInt(row.children[0].textContent.trim(), 10);
     let car_name = row.children[1].textContent;
     let select_car_type = row.children[2].textContent;
     let img = row.children[3].textContent;
@@ -144,14 +145,16 @@ function edit_row(event) {
         row.children[5].textContent = document.getElementById("price").value;
         row.children[6].textContent = document.getElementById("capacity").value;
         row.children[7].textContent = document.getElementById("description").value;
-        updateObject(id,{s_no:id,
+        updateObject(id, {
+            s_no: id,
             car_name: row.children[1].textContent,
             select_car_type: row.children[2].textContent,
-            img:  row.children[3].textContent,
-            select_transmition:  row.children[4].textContent,
-            capacity:  row.children[5].textContent,
+            img: row.children[3].textContent,
+            select_transmition: row.children[4].textContent,
+            capacity: row.children[5].textContent,
             price: row.children[6].textContent,
-            description: row.children[7].textContent,});
+            description: row.children[7].textContent,
+        });
         resetform();
         document.getElementById('data-submit').classList.remove('hide')
         document.getElementById('data-update').classList.add('hide')
