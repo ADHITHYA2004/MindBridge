@@ -2,7 +2,9 @@
 .hide{
     display: none;
 }
-
+/*.home-main{
+    display: none;
+} */
 
 .form-div{
     width: 50%;
@@ -12,7 +14,7 @@
 th,td{
     width: 70px;
 }
-/* .newwidth{
+/*.newwidth{
     max-width: 300px;
 } */
 .hideimg{

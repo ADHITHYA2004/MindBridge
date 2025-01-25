@@ -16,14 +16,31 @@
         <div class="navbar">
             <nav class="navbar navbar-light bg-light">
                 <form class="container-fluid justify-content-start">
-                    <button class="btn btn-outline-success me-2" id="home-bot" onclick="home_bot(event)" type="button">Home</button>
-                    <button class="btn btn-outline-success me-2" id="admin-bot" onclick="admin_bot(event)" type="button">Admin</button>
-                    <button class="btn btn-outline-success me-2" id="booking-bot" onclick="booking_bot(event)" type="button">Booking page</button>
+                    <button class="btn btn-outline-success me-2" id="home-bot" onclick="home_bot(event)"
+                        type="button">Home</button>
+                    <button class="btn btn-outline-success me-2" id="admin-bot" onclick="admin_bot(event)"
+                        type="button">Admin</button>
+                    <button class="btn btn-outline-success me-2" id="booking-bot" onclick="booking_bot(event)"
+                        type="button">Booking page</button>
                 </form>
             </nav>
         </div>
-        <div id="home-page" class="home"></div>
-        <div class="booking-page"></div>
+        <div id="home-page" class="home">
+            <div class="home-main">
+                <div class="car-cards row" id="car-cards">
+                    <!-- <div class="card" style="width: 18rem;">
+                        <img src="https://therentalradar.com/_next/image?url=%2Fimages%2Foffers%2Flarge.png&w=256&q=75" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div id="booking-page" class="booking-page"></div>
         <div id="admin-page" class="admin">
             <div class="form d-flex justify-content-center">
                 <div class="form-div shadow p-3 mb-5 bg-body rounded">
@@ -74,6 +91,7 @@
                         </div>
                         <center>
                             <button type="submit" class="btn btn-primary" id="data-submit">Submit</button>
+                            <button type="submit" class="btn btn-primary" id="data-update">Update</button>
                             <button type="reset" class="btn btn-danger">reset</button>
                         </center>
                     </form>
