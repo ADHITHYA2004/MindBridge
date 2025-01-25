@@ -45,7 +45,7 @@ document.getElementById("data-submit").addEventListener("click", function (e) {
         description: description,
     });
     resetform();
-    addcard();
+    // addcard();
     console.log(car_details)
 })
 
@@ -63,6 +63,17 @@ function adddetails(car_name, select_car_type, img, select_transmition, price, c
                                 <td><i id='delete_row' onclick='delete_row(event)' class="fa-solid fa-trash"></i> 
                                 <i id='edit_row' onclick='edit_row(event)' class="fa-solid fa-pen-to-square"></i></td>`;
     table_body.appendChild(newrow)
+    const car_cards = document.getElementById('car-cards');
+    const new_card = document.createElement("div");
+
+    car_cards.innerHTML += `<div class="card" style="width: 18rem; margin:15px">
+    <img src="https://therentalradar.com/_next/image?url=%2Fimages%2Foffers%2Flarge.png&w=256&q=75" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">${price}</h5>
+        <p class="card-text">${description}.</p>
+        <a href="#" class="btn btn-primary" onclick="book(event)">Book</a>
+    </div>
+</div>`
 }
 
 // delete
@@ -172,23 +183,18 @@ function booking_bot(event) {
 
 // home page js
 
-function addcard() {
-    const car_cards = document.getElementById('car-cards');
-    const new_card = document.createElement("div");
-
-    // for (const x of car_details) {
-    // console.log(x);
-
+function book(event) {
+    event.preventDefault();
+    const book_car_card = event.target.closest('.card-body').querySelector('.card-text');
+    if (book_car_card) {
+        console.log(book_car_card.textContent);
+    } else {
+        console.error('Element not found');
+    }
     
-    car_cards.innerHTML += `<div class="card" style="width: 18rem; margin:15px">
-    <img src="https://therentalradar.com/_next/image?url=%2Fimages%2Foffers%2Flarge.png&w=256&q=75" class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">${car_details[car_details.length-1].price}</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk
-            of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-</div>`
-// }
     
+    document.getElementById('booking-page').classList.remove('hide')
+    document.getElementById('home-page').classList.add('hide')
+    document.getElementById('admin-page').classList.add('hide')
+
 }

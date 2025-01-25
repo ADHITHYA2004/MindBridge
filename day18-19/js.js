@@ -136,7 +136,7 @@ function delete_row(event) {
 function edit_row(event) {
     event.preventDefault();
     const row = event.target.closest("tr");
-
+    
     let name = row.children[0].textContent;
     let age = row.children[1].textContent;
     let phone_no = row.children[2].textContent;
