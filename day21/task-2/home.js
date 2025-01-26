@@ -179,6 +179,7 @@ function updateObject(id, newObj) {
 function resetform() {
     document.getElementById("car-name").value = "";
     document.getElementById("select-car-type").value = "";
+    document.getElementById("Select-transmition").value = "";
     document.getElementById("img").value = "";
     document.getElementById("capacity").value = "";
     document.getElementById("price").value = "";
