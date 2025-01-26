@@ -44,6 +44,7 @@ document.getElementById("data-submit").addEventListener("click", function (e) {
     console.log(car_details)
 })
 
+//details add
 function adddetails(s_no, car_name, select_car_type, img, select_transmition, price, capacity, description) {
     const table_body = document.getElementById("table-body");
     const newrow = document.createElement("tr");
@@ -62,26 +63,25 @@ function adddetails(s_no, car_name, select_car_type, img, select_transmition, pr
 
 }
 
+// card add
 function addCards() {
     const container = document.getElementById('car-cards');
-    container.innerHTML = ''; // Clear the container before rendering
+    container.innerHTML = '';
     car_details.forEach(obj => {
-        // const card = document.createElement('div');
-        // card.className = 'cardss';
         container.innerHTML += `
-            <div class="card" style="width: 18rem; margin:15px">
-            <center><h1>${obj.car_name}</h1></center>
+            <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem; margin:15px">
             <img src="${obj.img}">
             <div class="card-body">
-                <h5 class="card-title">${obj.price}</h5>
-                <p class="card-text">${obj.description}</p>
+            <center><h1>${obj.car_name} ${obj.select_car_type}</h1></center>
+                <h5 class="card-title">Price: ${obj.price}/per-day</h5>
+                <p class="card-text capacity">Capacity: ${obj.capacity} - ${obj.select_transmition}</p>
+                <p class="card-text ">About: ${obj.description}</p>
+                
                 <a href="#" class="btn btn-primary" onclick="book(event)">Book</a>
             </div>
         </div>`;
-        // container.appendChild(card);
     });
 }
-
 addCards()
 
 // delete
@@ -187,6 +187,7 @@ function resetform() {
 
 // button
 document.getElementById('booking-page').classList.add('hide')
+// change
 document.getElementById('home-page').classList.add('hide')
 function home_bot(event) {
     event.preventDefault();
@@ -213,24 +214,63 @@ function booking_bot(event) {
 
 
 
-
-
-
-
 // home page js
 
 function book(event) {
     event.preventDefault();
-    const book_car_card = event.target.closest('.card-body').querySelector('.card-text');
-    if (book_car_card) {
-        console.log(book_car_card.textContent);
-    } else {
-        console.error('Element not found');
-    }
 
+    const book_car_name = event.target.closest('.card-body').querySelector('h1').textContent;
+    const book_car_img = event.target.closest('.card-body').querySelector('img');
+    const book_car_capacity = event.target.closest('.card-body').querySelector('.capacity').textContent;
+    const book_car_price1 = event.target.closest('.card-body').querySelector('h5').textContent;
+    book_car_price=parseFloat(book_car_price1.replace(/[^\d.-]/g, ''));
+    console.log(book_car_capacity.textContent);
+    const booking_card = document.getElementById('booking-card');
+    booking_card.innerHTML = ''
+    booking_card.innerHTML = `
+    <div class="card " style="width: 30rem;">
+                        <img src="https://purepng.com/public/uploads/large/purepng.com-ford-mustang-red-carcarcarsvehiclevehiclestransport-5615211266939gqkz.png"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <center>
+                                <h1>${book_car_name}</h1>
+                            </center>
+                            <h5 class="card-title" id='price_to'>${book_car_price}/per-day</h5>
+                                <p class="card-text">${book_car_capacity}</p>
+                            From <input type="date" class="date-input" id="from" min="new Date().toISOString().split('T')[0]">
+                            To <input type="date" class="date-input" id="to" min="new Date().toISOString().split('T')[0]">
+                            <div id='total-amount'>
 
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-primary" id='calculate' onclick='total(event)'>Calculate</a>
+                        <a href="#" class="btn btn-primary" id='final-book' onclick='finalbook(event)'>Book The Car</a>
+                    </div>`
+                    
+    document.getElementById('calculate').classList.remove('hide')
+    document.getElementById('final-book').classList.add('hide')
     document.getElementById('booking-page').classList.remove('hide')
     document.getElementById('home-page').classList.add('hide')
     document.getElementById('admin-page').classList.add('hide')
-
 }
+
+// calculate total amount
+function total(event) {
+let from_date=new Date(document.getElementById('from').value);
+let to_date= new Date(document.getElementById('to').value);
+let day_count=to_date.getTime()-from_date.getTime()
+const total_days = Math.ceil(day_count/ (1000 * 60 * 60 * 24));
+let calculate_amount=total_days*book_car_price
+document.getElementById('total-amount').innerHTML=`<h2>Total Amount: ${calculate_amount}</h2>`
+document.getElementById('calculate').classList.add('hide')
+document.getElementById('final-book').classList.remove('hide')
+console.log(calculate_amount)
+}
+
+function finalbook(event){
+    alert("The car has Booked Successfully")
+}
+// date 
+// const dateInput = document.getElementsByClassName('date-input');
+// const today = new Date().toISOString().split('T')[0]; // Get today's date in YYYY-MM-DD format
+// dateInput.min = today; // Set the min attribute
