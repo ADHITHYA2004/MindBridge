@@ -4,3 +4,17 @@
 .form-div{
     width: 50%;
 }
+#Upcoming{
+    color: green;
+}
+#Past{
+    color: red;
+    /* display: none; */
+    /* font-size: 40px; */
+}
+#present{
+    color:green;
+}
+.task{
+    /* display: ; */
+}

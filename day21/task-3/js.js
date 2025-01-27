@@ -21,9 +21,25 @@ document.getElementById('data-submit').addEventListener('click', (event) => {
     let event_date = document.getElementById('event-date').value;
     let event_time = document.getElementById('event-time').value;
     let description = document.getElementById('description').value;
+    let date = event_date.split("-");
+    let sdate = Number(date[2]);
+    let month = Number(date[1]);
+    let year = Number(date[0]);
+    let today = new Date();
+    let taskDate = new Date(year, month - 1, sdate);
+    let taskStatus;
+    if (taskDate.toDateString() === today.toDateString()) {
+        taskStatus = "Present";
+    }
+    else if (taskDate > today) {
+        taskStatus = "Upcoming";
+    }
+    else {
+        taskStatus = "Past";
+    }
 
     event_arr.push({
-        s_no: s_no, event_name: event_name, event_category: event_category, event_date: event_date, event_time: event_time, description: description
+        s_no: s_no, event_name: event_name, event_category: event_category, event_date: event_date, event_time: event_time, description: description, event_status: taskStatus
     })
     console.log(event_arr)
     s_no++;
@@ -37,17 +53,18 @@ function addevent() {
     const content = document.getElementById('table-body')
     content.innerHTML = '';
     event_arr.forEach(obj => {
-        content.innerHTML += `<tr>
+        content.innerHTML += `<tr class='task ${obj.event_status}'>
                                 <td>${obj.s_no}</td>
                                 <td>${obj.event_name}</td>
                                 <td>${obj.event_category}</td>
                                 <td>${obj.event_date}</td>
                                 <td>${obj.event_time}</td>
                                 <td>${obj.description}</td>
-                                <td>Upcoming</td>
+                                <td id='${obj.event_status}'>${obj.event_status}</td>
                                 <td><i id='delete_row' onclick='delete_row(event)' class="fa-solid fa-trash"></i> 
                                     <i id='edit_row' onclick='edit_row(event)' class="fa-solid fa-pen-to-square"></i></td>
                             </tr>`
+
     })
 }
 addevent()
@@ -68,9 +85,9 @@ function delete_row(event) {
 
 function edit_row(event) {
     event.preventDefault();
-    const row = event.target.closest("tr");
+    let row = event.target.closest("tr");
     let id = parseInt(row.children[0].textContent.trim(), 10);
-    
+    // console.log(id);
     document.getElementById('event-name').value = event_arr[id].event_name;
     document.getElementById('select-event-category').value = event_arr[id].event_category;
     document.getElementById('event-date').value = event_arr[id].event_date;
@@ -91,11 +108,22 @@ function edit_row(event) {
         let event_date = document.getElementById('event-date').value;
         let event_time = document.getElementById('event-time').value;
         let description = document.getElementById('description').value;
-        console.log(event_name);
-        console.log(event_category);
-        console.log(event_date);
-        console.log(event_time);
-        console.log(description);
+        let date = event_date.split("-");
+        let sdate = Number(date[2]);
+        let month = Number(date[1]);
+        let year = Number(date[0]);
+        let today = new Date();
+        let taskDate = new Date(year, month - 1, sdate);
+        let taskStatus;
+        if (taskDate.toDateString() === today.toDateString()) {
+            taskStatus = "Present";
+        }
+        else if (taskDate > today) {
+            taskStatus = "Upcoming";
+        }
+        else {
+            taskStatus = "Past";
+        }
         updateObject(id, {
             s_no: id,
             event_name: event_name,
@@ -103,20 +131,32 @@ function edit_row(event) {
             event_date: event_date,
             event_time: event_time,
             description: description,
+            event_status: taskStatus,
         });
-            resetform();
-            addevent();
-            document.getElementById('data-submit').classList.remove('hide')
-            document.getElementById('data-update').classList.add('hide')
+        resetform();
+        addevent();
+        document.getElementById('data-submit').classList.remove('hide')
+        document.getElementById('data-update').classList.add('hide')
     })
 
 
 }
 function updateObject(id, newObj) {
-    const index = event_arr.findIndex(obj => obj.s_no == id);
-    console.log(id);
-    if (index !== -1) {
+
+    // console.log(id)
+    let index = event_arr.findIndex(obj => {
+        // console.log( obj.s_no);
+        if(obj.s_no == id){
+            // console.log('hi' + obj);
+            return true
+        }
+    });
+    // console.log("hii" + index);
+    
+    if (index >=0) {
+    console.log(event_arr[id]);
         event_arr[index] = newObj;
+        console.log(event_arr[id]);
         addevent();
     }
     else {
@@ -134,4 +174,42 @@ function resetform() {
     document.getElementById("event-date").value = "";
     document.getElementById("event-time").value = "";
     document.getElementById("description").value = "";
+}
+
+
+
+
+function upcoming(){
+    let upcoming=document.querySelectorAll('.task')
+    upcoming.forEach(ele =>{
+        if(ele.classList.contains('Upcoming')){
+            console.log(ele)
+            ele.style.display='table-row'
+        }
+        else{
+            ele.style.display='none'
+        }
+    })
+}
+function present(){
+    let present=document.querySelectorAll('.task')
+    present.forEach(ele =>{
+        if(ele.classList.contains('Present')){
+            ele.style.display='table-row'
+        }
+        else{
+            ele.style.display='none'
+        }
+    })
+}
+function past(){
+    let past=document.querySelectorAll('.task')
+    past.forEach(ele =>{
+        if(ele.classList.contains('Past')){
+            ele.style.display='table-row'
+        }
+        else{
+            ele.style.display='none'
+        }
+    })
 }

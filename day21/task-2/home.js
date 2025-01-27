@@ -166,7 +166,6 @@ function edit_row(event) {
 
 function updateObject(id, newObj) {
     const index = car_details.findIndex(obj => obj.s_no === id);
-    console.log(id);
     if (index !== -1) {
         car_details[index] = newObj;
         addCards();
