@@ -36,26 +36,26 @@
                     <div class="form-div shadow p-3 mb-5 bg-body rounded">
                         <form action="">
                             <div class="mb-3">
-                                <label for="event-name" class="form-label">Expence Name</label>
-                                <input type="text" class="form-control" id="event-name" required>
+                                <label for="expence-name" class="form-label">Expence Name</label>
+                                <input type="text" class="form-control" id="expence-name" required>
                             </div>
                             <div class="mb-3">
-                                <label for="event-time" class="form-label">Expence Amount</label>
-                                <input type="number" class="form-control" id="event-time" required>
+                                <label for="expence-amount" class="form-label">Expence Amount</label>
+                                <input type="number" class="form-control" id="expence-amount" required>
                             </div>
                             <div class="mb-3">
-                                <label for="select-event-category" class="form-label">Expence Category</label>
-                                <select id="select-event-category" class="form-select" required>
+                                <label for="expence-category" class="form-label">Expence Category</label>
+                                <select id="expence-category" class="form-select" required>
                                     <option disabled selected>select</option>
                                     <option>Shopping</option>
                                     <option>Food</option>
                                     <option>Travel</option>
-                                    <option>Other Items</option>
+                                    <option>Other</option>
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <label for="event-date" class="form-label">Event Date</label>
-                                <input type="date" class="form-control" id="event-date" required>
+                                <label for="date" class="form-label">Date</label>
+                                <input type="date" pattern="\d{4}-\d{2}-\d{2}" class="form-control" id="date" required>
                             </div>
                             <div class="mb-3">
                                 <label for="description" class="form-label">Description</label>
@@ -65,7 +65,7 @@
                                 </div>
                             </div>
                             <center>
-                                <button type="submit" class="btn btn-primary hide" id="data-submit">Submit</button>
+                                <button type="submit" class="btn btn-primary" id="data-submit" >Submit</button>
                                 <button type="submit" class="btn btn-primary" id="data-update">Update</button>
                                 <button type="reset" class="btn btn-danger">reset</button>
                             </center>
@@ -73,52 +73,88 @@
                     </div>
                 </div>
             </div>
-            <div class="expences" id="expences">
-                <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                    <div class="container-fluid">
-                        <a class="navbar-brand" href="#">Navbar</a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Link</a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        Dropdown
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Action</a></li>
-                                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                                        <li>
-                                            <hr class="dropdown-divider">
-                                        </li>
-                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                                </li>
-                            </ul>
-                            <form class="d-flex" role="search">
-                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                                <button class="btn btn-outline-success" type="submit">Search</button>
-                            </form>
+        </div>
+        <div class="expences" id="expences">
+            <div class="expences-content">
+                <div class="total-card d-flex justify-content-around">
+                    <div class="card " style="width: 13rem;background-color: rgb(131, 145, 133);">
+                        <div class="card-body">
+                            <center><h5 class="card-title">Total Expences</h5>
+                                <h4 id="total-amount"></h4></center>
                         </div>
                     </div>
-                </nav>
+                    <div class="card hide" id="div-2" style="width: 13rem;background-color: rgb(131, 145, 133);">
+                        <div class="card-body">
+                            <center><h5 class="card-title" id="select-expence"></h5>
+                                <h4 id="total-select"></h4></center>
+                        </div>
+                    </div>
+                    <div class="card hide" id="div-3" style="width: 13rem;background-color: rgb(131, 145, 133);">
+                        <div class="card-body">
+                            <center><h5 class="card-title" id="select-day-expence"></h5>
+                                <h4 id="day-total"></h4></center>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-bar d-flex justify-content-around gap-5">
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-secondary" onclick="showall()">ShowAll</button>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" onclick="filter_1()">
+                            Category
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" class="category" id="travel" onclick="travel()">Travel</a></li>
+                            <li><a class="dropdown-item" href="#" class="category" id="food" onclick="food()">Food</a></li>
+                            <li><a class="dropdown-item" href="#" class="category" id="shopping" onclick="shopping()">Shopping</a></li>
+                            <li><a class="dropdown-item" href="#" class="category" id="other" onclick="other()">Other</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" onclick="filter_2()">
+                            per/day-year-month
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" onclick="dayfilter(x='oneweek')">last one Week</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="dayfilter(x='onemonth')">last one month</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="dayfilter(x='sixmonth')">last six month</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="dayfilter(x='oneyear')">last one year</a></li>
+                        </ul>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Search" id="Search"
+                            aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <button class="btn btn-secondary" type="button" id="button-add" onclick="search()">Button</button>
+                    </div>
+                </div>
+
+                <div class="table-div">
+                    <div class=" table-contant">
+                        <table class="table  table-striped">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>S.No.</th>
+                                    <th>Expence Name</th>
+                                    <th>Expence Amount</th>
+                                    <th>Expence Category</th>
+                                    <th>Date</th>
+                                    <th class="newwidth">DESCRIPTION</th>
+                                    <th>ACTION</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-body">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
 
-        <script src="./js.js"></script>
+    <script src="./js.js"></script>
 </body>
 
 </html>
