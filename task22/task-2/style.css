@@ -1,0 +1,39 @@
+.main {
+    padding: 10px;
+    margin: 30px;
+}
+
+.hide {
+    display: none;
+}
+
+.form-div {
+    width: 300px;
+}
+
+.total-task-display {
+    color: blue;
+    font-weight: 700;
+}
+
+.total-task-completed {
+    color: green;
+    font-weight: 700;
+}
+
+.total-tas-pendind {
+    color: red;
+    font-weight: 700;
+
+}
+
+/* .task-list{
+    border:black 2px solid;
+} */
+.not-completed {
+    color: red;
+}
+
+.Completed {
+    color: green;
+}
