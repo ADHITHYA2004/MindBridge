@@ -16,4 +16,9 @@
     width: 100%;
     height: 100px;
 }
-
+#delete_row{
+    color: red;
+}
+#edit_row{
+    color: green;
+}

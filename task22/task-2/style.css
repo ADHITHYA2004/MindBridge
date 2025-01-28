@@ -31,9 +31,12 @@
     border:black 2px solid;
 } */
 .not-completed {
+    margin-top: 10px;
     color: red;
 }
 
-.Completed {
+.completed{
+    margin-top: 10px;
     color: green;
+    display: none;
 }
