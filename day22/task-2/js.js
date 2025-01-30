@@ -4,7 +4,7 @@ const task_arr = [{
     id: 0, task_name: 'Project completion', estimated_time: '2025-01-30T23:24', task_description: 'hello',
 },
 {
-    id: 1, task_name: 'Project completion', estimated_time: '2025-02-28T15:25', task_description: 'hello',
+    id: 1, task_name: 'Project1 completion', estimated_time: '2025-02-28T15:25', task_description: 'hello',
 }]
 
 task_complete_count = 0;
@@ -30,26 +30,28 @@ function completed(event) {
     com_bot.parentNode.classList.add('hide')
     com_bot.parentNode.previousElementSibling.classList.add('hide')
     com_bot.parentNode.nextElementSibling.classList.remove('hide')
-    console.log(com_bot.parentNode.previousElementSibling)
     task_complete_count++;
     total_task_display()
 }
 
 //delete
-function delete_bot(event) {
-    event.target.parentElement.remove;
+function delete_bot(event,name) {
+    console.log(name);
+    for(let i=0;i<task_arr.length;i++){
+        if (task_arr[i].task_name==name) {
+            task_arr.splice(i, 1);
+            console.log(task_arr);
+            addtask()
+            total_task_display()
+        }
+    }
+
 }
 // timer
 function timer_start(event, inputtime) {
-    // let inputtime1 = inputtime+":00";
-    let inputdate12 = "2025-01-30T23:24:00";
-
-    console.log(inputdate12);
-    console.log(inputtime);
-
-    var countDownDate = new Date(inputdate12);
+    let inputtime1 = inputtime + ":00";
+    var countDownDate = new Date(inputtime1);
     console.log(countDownDate);
-
     x = setInterval(function () {
         var now = new Date().getTime();
         var distance = countDownDate - now;
@@ -59,14 +61,16 @@ function timer_start(event, inputtime) {
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
         document.getElementById(inputtime).innerHTML = days + "d " + hours + "h "
             + minutes + "m " + seconds + "s ";
-        console.log(days + "d " + hours + "h "
-            + minutes + "m " + seconds + "s ")
-        console.log(distance); // Check the countdown distance
-        console.log(`Days: ${days}, Hours: ${hours}, Minutes: ${minutes}, Seconds: ${seconds}`);
+        // console.log(days + "d " + hours + "h "
+            // + minutes + "m " + seconds + "s ")
+        // console.log(distance); // Check the countdown distance
+        // console.log(`Days: ${days}, Hours: ${hours}, Minutes: ${minutes}, Seconds: ${seconds}`);
 
         if (distance < 0) {
             clearInterval(x);
-            console.log("Countdown finished!");
+            document.getElementById(inputtime).innerHTML ='';
+            document.getElementById(inputtime).innerText ="The Expected time is overed"
+            console.log("The Expected time is overed");
         }
     }, 1000);
 }
@@ -86,16 +90,16 @@ document.getElementById('data-submit').addEventListener('click', (event) => {
     let id = task_arr.length - 1;
     task_arr.push({
         id: id + 1, task_name: task_name, estimated_time: estimated_time, task_description: task_description,
-
     })
+    total_task_display()
     addtask()
     reset()
 })
 
 function addtask() {
     let event_list = document.getElementById('task-list')
+    event_list.innerHTML =" ";
     task_arr.forEach(obj => {
-        // let inputtime = obj.estimated_time;
         event_list.innerHTML += `<div class="task d-flex justify-content-between shadow-lg p-3 mb-5 bg-body-tertiary rounded">
                     <div class="row-gap-5" style="max-width: 400px;">
                         <h1  class="project-name" >${obj.task_name}</h1>
@@ -118,7 +122,7 @@ function addtask() {
                     <div class="d-flex flex-column gap-3">
                         <button type="button" class="btn btn-success" id="complete-bot" onclick='completed(event)'>Completed</button>
                         <button type="button" class="btn btn-info" id="edit-bot">Edit</button>
-                        <button type="button" class="btn btn-danger" id="delete-bot" onclick='delete_bot(event)'>Delete</button>
+                        <button type="button" class="btn btn-danger" id="delete-bot" onclick="delete_bot(event,\'${obj.task_name}\')">Delete</button>
                     </div>
                     <div class='hide' style='color:green'>
                         <h2>Task Completed</h2>
