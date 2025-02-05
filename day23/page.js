@@ -16,7 +16,7 @@ let arr;
             <div class="card-body d-flex flex-column ">    
             <div><h6 class="card-title ">${element.title}</h6></div>         
             <div><h4 class="lead fw-bold">Price: ${element.price}</h4></div>
-            <div><a href="http://127.0.0.1:5501/day23/buy.html?id=${element.id}" class="btn btn-primary text-body-secondary">Buy</a></div>
+            <div><a href="http://127.0.0.1:5501/day23/buy.html?id=${element.id}" style="background-color: #ff784b;border-color:#ff784b;"class="btn btn-primary text-body-secondary">Buy</a></div>
             </div>
     </div>`
         }
@@ -26,7 +26,7 @@ let arr;
             <div class="card-body">
                 <h6 class="card-title">${element.title}</h6>
                 <h4 class="lead fw-bold">Price: ${element.price}</h4>
-                <a href="http://127.0.0.1:5501/day23/buy.html?id=${element.id}" class="btn btn-primary">Buy</a>
+                <a href="http://127.0.0.1:5501/day23/buy.html?id=${element.id}" style="background-color: #ff784b;border-color:#ff784b;" class="btn btn-primary">Buy</a>
     
             </div>
     </div>`}
@@ -36,7 +36,7 @@ let arr;
             <div class="card-body">
                 <h6 class="card-title">${element.title}</h6>
                 <h4 class="lead fw-bold">Price: ${element.price}</h4>
-                <a href="http://127.0.0.1:5501/day23/buy.html?id=${element.id}" class="btn btn-primary">Buy</a>
+                <a href="http://127.0.0.1:5501/day23/buy.html?id=${element.id}" style="background-color: #ff784b; border-color:#ff784b;" class="btn btn-primary">Buy</a>
 
     </div>`
         }

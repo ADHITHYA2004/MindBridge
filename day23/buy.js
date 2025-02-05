@@ -10,7 +10,6 @@ async function get_data() {
 
     console.log(arr)
     let append_elemnt = document.getElementsByClassName('head')[0];
-    // document.getElementById('head').innerHTML += ` `
     let star = document.createElement('p');
     for (let i = 1; i <= 5; i++) {
         if (i <= Number(Math.floor(arr.rating.rate))) {
@@ -40,7 +39,8 @@ async function get_data() {
                         <p>$${arr.price}</p>
                     </div>
                     <div class="button">
-                        <button>Add Cart</button>
+                        <button style="margin-bottom:15px">Add Cart</button>
+                        <button>Buy Now</button>
                     </div>
                 </div>
             </div>`
