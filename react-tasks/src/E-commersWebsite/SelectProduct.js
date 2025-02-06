@@ -7,9 +7,6 @@ const SelectProduct = () => {
     const buyProduct = getContext.buyData;
     const handleAddCart=getContext.handleAddCart;
     const cartContains=getContext.cart
-    // const find=cartContains.some(ele=>{
-    //     ele.id==buyProduct.id?false:true
-    // })
     const handelAlert=()=>{alert("Product Added to Cart")}
     console.log(buyProduct)
     return (

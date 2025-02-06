@@ -40,6 +40,7 @@ const WebsitApp = () => {
 
 
     return (
+        
         <productsContext.Provider value={{handleProductDetails,buyData,handleAddCart,cart,handleRemove}}>
                     <RouterProvider router={router}></RouterProvider>
         </productsContext.Provider>

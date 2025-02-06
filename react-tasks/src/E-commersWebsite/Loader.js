@@ -1,4 +1,3 @@
-
 const Loader = async () => {
     console.log(1);
     const data= await fetch('https://fakestoreapi.com/products')
