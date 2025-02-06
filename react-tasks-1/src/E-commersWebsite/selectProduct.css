@@ -17,3 +17,9 @@
 .description{
     text-align: justify;
 }
+.price_rating{
+    gap: 30px;
+}
+.selectPrice{
+    color: #e03131;
+}

@@ -13,6 +13,10 @@
 .cartBuyBtn{
 margin: 10px 0;
 }
+.cartRemoveBtn{
+    background-color: #e03131;
+    border: none;
+}
 .cartImgDive{
     height: 150px;
     width:150px;

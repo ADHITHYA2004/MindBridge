@@ -69,7 +69,15 @@
     background-color: #f76707;
     border: none;
 }
+.pagetitle{
+    color: #f76707;
+    text-align: center;
+    margin: 30px 0px;
+}
 
 .cartCount{
-    color: red;
+    color:#fcc419 ;
+    background-color: black;
+    border-radius: 50%;
+    padding: 0 7px;
 }

@@ -11,7 +11,8 @@ const ProductPage = () => {
     const navigate = useNavigate()
 
     return (
-        <div className="containers"><h1>ProductPage</h1>
+        <div className="containers">
+            <h1 className="pagetitle">Products</h1>
             <div className="cardContainer gap-4 ">
                 {storeData.map(ele =>
                     <div className="card shadow p-3 mb-5 bg-body-tertiary rounded">

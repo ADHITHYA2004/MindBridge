@@ -12,7 +12,7 @@ const WebNave = () => {
             <div>
                 <ul>
                     <NavLink to='/'><li>Products</li></NavLink>
-                    <NavLink to='/selectproduct'><li>Select product</li></NavLink>
+                    {/* <NavLink to='/selectproduct'><li>Select product</li></NavLink> */}
                     <NavLink to='/cart'><li>Cart <span className="cartCount">{count}</span></li></NavLink>
                 </ul>
             </div>

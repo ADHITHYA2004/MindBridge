@@ -13,8 +13,9 @@ const CartPage = () => {
         total+=d
     })
     return (
-        <div>
-            <h3>Total $:<span>{total}</span></h3>
+        <div className='containers'>
+            <h1 className='pagetitle'>My Cart</h1>
+            <h3>Total $:<span className=''>{total}</span></h3>
             <div className="cartContainer">
             {cartProducts.map(ele=>
                 <div className='cartCard d-flex shadow-lg p-3 mb-5 bg-body-tertiary rounded'>
@@ -28,7 +29,7 @@ const CartPage = () => {
                         <div>
                             <h6>Price ${ele.price}</h6>
                             <button className="btn btn-primary cartBuyBtn">Buy</button><br />
-                            <button onClick={()=>handleRemove(ele.id)} className="btn btn-primary cart">Remove</button>
+                            <button onClick={()=>handleRemove(ele.id)} className="btn btn-primary cart cartRemoveBtn">Remove</button>
                         </div>
                     </div>
                 )}
