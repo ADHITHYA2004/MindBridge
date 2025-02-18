@@ -1,0 +1,74 @@
+.booking_form {
+    padding: 30px 10%;
+
+}
+.mainBookingform{
+    padding: 20px;
+}
+form small {
+    color: red;
+}
+.state{
+    margin-top: 30px;
+}
+.district{
+    margin-top: 30px;
+}
+.zip{
+    margin-top: 25px;
+}
+#form_layout {
+    height: fit-content;
+    background-color: lightblue;
+    width: 40%;
+    padding: 60px;
+    margin: 10px;
+    border-radius: 20px;
+}
+input{
+    width: 70%;
+}
+
+#form_layout .field input{
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    border: none;
+}
+
+#form_layout  label {
+    text-align: center;
+    font-size: larger;
+    font-weight: 500;
+}
+
+#form_layout  .labels label {
+    padding-right: 20px;
+
+}
+
+#form_layout  .field select {
+    padding: 5px;
+    width: 180px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    border: none;
+}
+
+#form_layout  .field button {
+    border-radius: 20px;
+    margin: 10px 25%;
+    border: none;
+    padding: 10px;
+    background-color: black;
+    color: whitesmoke;
+}
+
+#form_layout small {
+    display: none;
+    color: red;
+    margin-bottom: 5px;
+    font-size: large;
+    font-weight: 500;
+}

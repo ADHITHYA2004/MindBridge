@@ -49,8 +49,8 @@
     padding: 0 15px;
 }
 .productCardImg{
-    height: 200px;
-    width: 200px;
+    height: 250px;
+    width: 250px;
     overflow: hidden;
     margin: 0 25px;
 
@@ -59,7 +59,9 @@
     height: 100%;
     width: 100%;
 }
-
+.card:hover{
+    transform: scale(1.03);
+}
 .card-title{
     white-space: nowrap;
     overflow: hidden;

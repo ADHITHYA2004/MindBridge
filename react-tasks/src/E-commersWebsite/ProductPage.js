@@ -17,7 +17,7 @@ const ProductPage = () => {
                 {storeData.map(ele =>
                     <div className="card shadow p-3 mb-5 bg-body-tertiary rounded">
                         <div className="productCardImg">
-                            <img src={ele.image} className="products-img" alt="..." />
+                            {/* <img src={ele.image} className="products-img" alt="..." /> */}
                         </div>
                         <div className="card-body">
                             <h5 className="card-title">{ele.title}</h5>

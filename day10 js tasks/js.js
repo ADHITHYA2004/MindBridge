@@ -14,14 +14,12 @@ for(let i=1; i<=10;i++){
     console.log(i);
 }
 
-
 //task 3
 console.log("TASK-3 ----Multiple of number");
 let mul=prompt("enter the number for find the multiples");
 for(let i=1;i<=10;i++){
     console.log(mul*i);
 }
-
 
 //task 4
 console.log("Task-4 -----find prime num");
@@ -74,7 +72,6 @@ for(let char of strings){
 console.log(count);
 
 // task 8
-
 console.log("Task-8 ----star patten");
 for(let i=1;i<=5;i++){
         console.log("* ".repeat(i));

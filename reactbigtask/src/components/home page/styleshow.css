@@ -1,0 +1,14 @@
+.slidemain{
+    text-align: center;
+    padding-top: 20px;
+}
+.show img{
+    height: 500px
+}
+.headingContant{
+    width: 50%;
+    /* border: black 2px solid; */
+}
+.carousel{
+    width: 50%;
+}

@@ -11,7 +11,6 @@ export const productsContext=createContext();
 const WebsitApp = () => {
 
     const [buyData,set_buyData]=useState();
-
     const [cart,set_cart]=useState([]);
 
     const handleProductDetails=(data)=>{
@@ -22,7 +21,6 @@ const WebsitApp = () => {
         set_cart([...cart,item])
         console.log(cart)
     }
-
 
     const handleRemove=(id)=>{
         set_cart(cart.filter(ele=> id!=ele.id))
@@ -37,12 +35,10 @@ const WebsitApp = () => {
             </Route>
         )
     )
-
-
     return (
         
         <productsContext.Provider value={{handleProductDetails,buyData,handleAddCart,cart,handleRemove}}>
-                    <RouterProvider router={router}></RouterProvider>
+                <RouterProvider router={router}></RouterProvider>
         </productsContext.Provider>
     )
 }
